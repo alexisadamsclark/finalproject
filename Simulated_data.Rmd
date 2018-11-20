@@ -8,6 +8,7 @@ output: html_document
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 library(tidyverse)
+#Install the package simstudy first, if needed: install.packages("simstudy")
 library(simstudy)
 library(here)
 ```
@@ -15,6 +16,7 @@ continuous measures of sleep quality, depression symptoms, and quality of life i
 socioeconomic status, education, and ethnicity
 https://nces.ed.gov/blogs/nces/post/educational-attainment-differences-by-students-socioeconomic-status
 ```{r data_structure}
+#Have to create objects before you call a function on them, so the 2 lines of code below don't work 
 rm(def)
 rm(dt)
 
@@ -27,6 +29,7 @@ mu <- c(3, 5)
 sigma <- c(1, 2)
 dt <- addCorData(dt, "ID", mu = mu, sigma = sigma, rho = -.8, corstr = "cs")
 dt <- addCorData(dt, "ID", mu = mu, sigma = sigma, rho = -.9, corstr = "cs")
+
 
 mu2 <- c(3, 3)
 sigma <- c(1, 2)
@@ -45,6 +48,7 @@ colnames(dt)[12] <- "SQ2"
 colnames(dt)[13] <- "SQ3"
 colnames(dt)[14] <- "SQ4"
 
+
 dt <- dt %>% 
   mutate_if(is.integer, as.factor) %>% 
   mutate_if(is.double, as.integer)
@@ -60,6 +64,6 @@ colnames(dt)
 dt[c("ID", "SES", "ED", "EN", "SQ1", "SQ2", "SQ3", "SQ4", "MDD1", "MDD2", "MDD3", "QL1", "QL2", "QL3")]
 
 cat(format_delim(head(dt), ";"))
-
+#I dont think we have to write it every time, once it is in your file you should be good. 
 write_csv(dt, file.path(here("Data"), "Final_project_simulated_data.csv"))
 ```
