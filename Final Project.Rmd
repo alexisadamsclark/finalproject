@@ -16,42 +16,47 @@ library(knitr)
 ####  Data visualizations
 ```{r Data visualization}
 #Import data
-list(here())
+#list(here()) - you don't want this to run in your knitted document, so consider commenting it or creating a new code chunk for just this code and use echo = FALSE)
 data <- import(here("Data", "Final_project_simulated_data.csv"))
 #View(data)
 
 #Calculate total scores
 data <- data %>% 
-  mutate(sq_total = SQ1 + SQ2 + SQ3 + SQ4, #It is good style to keep variable names lower case - and would be better if name was more informative to naive viewers)
+  mutate(sq_total = SQ1 + SQ2 + SQ3 + SQ4, #It is good style to keep variable names lower case (and it might be                                         better if name was more informative to naive viewers[e.g., depression])
          mdd_total = MDD1 + MDD2 + MDD3,
          ql_total = QL1 + QL2 + QL3)
 
 #Grouping by SES and creating a summary of MDD, SQ, and QL total scores
-scorebyses <- data %>% #lower case style
+scorebyses <- data %>% #changed to lower case style
   group_by(SES) %>% 
-  summarize(mean_mdd = mean(MDDtotal),
-            mean_sq = mean(SQtotal),
-            mean_ql = mean(QLtotal))
+  summarize(mean_mdd = mean(mdd_total),
+            mean_sq = mean(sq_total),
+            mean_ql = mean(ql_total))
 
 #Table summary
-kable(scorebyses)
+kable(scorebyses,format = "html", digits = round(2)) #make variable names more informative so we can see what the table is showing.
+#I rounded to 2 decimal places. 
+#Also consider changing the levels of SES to have a space between the level and SES (e.g., High SES) or just use High, Middle, Low. 
+```
 
+```{r data_vis}
 #Bar graph of MDD scores by SES
 ggplot(scorebyses, aes(x = SES, y = mean_mdd, fill = SES)) + 
   geom_col(alpha = 0.7) + #misspelled alpha
   theme_minimal() + 
   labs(title = "MDD Scores by SES", y = "MDD Total Score") #What is MDD - make more descriptive. 
 # I would have either a legend or labels, but not both since it is redundant. 
+# Consider changing the location of Low and Middle SES so that the plot is more intuitive 
 ```
 
 ```{r Data visualization 2}
 #Select and filter data
 data_p <- data %>%  
-                select(ID, SES, EN, SQtotal, MDDtotal, QLtotal) %>% 
+                select(ID, SES, EN, sq_total, mdd_total, ql_total) %>% 
                 filter(SES == "LowSES")
 
 #Scatterplot of sleep quality vs. depression
-ggplot(data_p, aes(x = SQtotal, y = MDDtotal)) + #rename variables in tidy dataset to be informative and lower case
+ggplot(data_p, aes(x = sq_total, y = mdd_total)) + #rename variables in tidy dataset to be informative and lower case
   geom_point(position = "jitter", alpha = 0.7) + #misspelled alpha
   geom_smooth(method = "lm") +
   theme_minimal() + 
@@ -63,7 +68,7 @@ ggplot(data_p, aes(x = SQtotal, y = MDDtotal)) + #rename variables in tidy datas
 
 ```{r dv3}
 #Scatterplot of quality of life vs. depression
-ggplot(data_p, aes(x = SQtotal, y = QLtotal)) + 
+ggplot(data_p, aes(x = sq_total, y = ql_total)) + 
   geom_point(position = "jitter", alpha = 0.7) + #misspelled alpha
   geom_smooth(method = "lm") +
   theme_minimal() + 
@@ -75,7 +80,7 @@ ggplot(data_p, aes(x = SQtotal, y = QLtotal)) +
 
 ```{r dv4}
 #Scatterplot of quality of life vs. depression
-ggplot(data_p, aes(x = QLtotal, y = MDDtotal)) + 
+ggplot(data_p, aes(x = ql_total, y = mdd_total)) + 
   geom_point(position = "jitter", alpha = 0.7) + #misspelled alpha
   geom_smooth(method = "lm") +
   theme_minimal() + 
@@ -84,7 +89,7 @@ ggplot(data_p, aes(x = QLtotal, y = MDDtotal)) +
        y = "Depression")
 ```
 
-The mean total depression score for the sample is `r round(mean(data$MDDtotal), 2)` . The mean total sleep quality score for the sample is `r round(mean(data$SQtotal), 2)`. The mean quality of life score for the sample is`r round(mean(data$MDDtotal),2)`. 
+The mean total depression score for the sample is `r round(mean(data$mdd_total), 2)` . The mean total sleep quality score for the sample is `r round(mean(data$sq_total), 2)`. The mean quality of life score for the sample is `r round(mean(data$ql_total),2)`. **ST changed the last code to be ql_total instead of MDDtotal**
 
 #### Demonstrate tidying messy data
 ```{r gather, separate, select, filter & spread}
