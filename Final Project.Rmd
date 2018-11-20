@@ -8,9 +8,8 @@ output: html_document
 ```{r setup, include=FALSE}
 #Load libraries
 library(rio)
-library(tidyverse)
+library(tidyverse) #dplyr is installed when you load tidyverse
 library(here)
-library(dplyr)
 library(knitr)
 ```
 
@@ -23,25 +22,26 @@ data <- import(here("Data", "Final_project_simulated_data.csv"))
 
 #Calculate total scores
 data <- data %>% 
-  mutate(SQtotal = SQ1 + SQ2 + SQ3 + SQ4, 
-         MDDtotal = MDD1 + MDD2 + MDD3,
-         QLtotal = QL1 + QL2 + QL3)
+  mutate(sq_total = SQ1 + SQ2 + SQ3 + SQ4, #It is good style to keep variable names lower case - and would be better if name was more informative to naive viewers)
+         mdd_total = MDD1 + MDD2 + MDD3,
+         ql_total = QL1 + QL2 + QL3)
 
 #Grouping by SES and creating a summary of MDD, SQ, and QL total scores
-scorebySES <- data %>% 
+scorebyses <- data %>% #lower case style
   group_by(SES) %>% 
-  summarize(meanMDD = mean(MDDtotal),
-            meanSQ = mean(SQtotal),
-            meanQL = mean(QLtotal))
+  summarize(mean_mdd = mean(MDDtotal),
+            mean_sq = mean(SQtotal),
+            mean_ql = mean(QLtotal))
 
 #Table summary
-kable(scorebySES)
+kable(scorebyses)
 
 #Bar graph of MDD scores by SES
-ggplot(scorebySES, aes(x = SES, y = meanMDD, fill = SES)) + 
-  geom_col(aplha = 0.7) + 
+ggplot(scorebyses, aes(x = SES, y = mean_mdd, fill = SES)) + 
+  geom_col(alpha = 0.7) + #misspelled alpha
   theme_minimal() + 
-  labs(title = "MDD Scores by SES", y = "MDD Total Score")
+  labs(title = "MDD Scores by SES", y = "MDD Total Score") #What is MDD - make more descriptive. 
+# I would have either a legend or labels, but not both since it is redundant. 
 ```
 
 ```{r Data visualization 2}
@@ -51,26 +51,32 @@ data_p <- data %>%
                 filter(SES == "LowSES")
 
 #Scatterplot of sleep quality vs. depression
-ggplot(data_p, aes(x = SQtotal, y = MDDtotal)) + 
-  geom_point(position = "jitter", aplha = 0.7) + 
+ggplot(data_p, aes(x = SQtotal, y = MDDtotal)) + #rename variables in tidy dataset to be informative and lower case
+  geom_point(position = "jitter", alpha = 0.7) + #misspelled alpha
   geom_smooth(method = "lm") +
   theme_minimal() + 
   labs(title = "Sleep Quality vs. Depression in low SES individuals",
        x = "Sleep Quality", 
        y = "Depression")
+#GREAT PLOT!
+```
 
+```{r dv3}
 #Scatterplot of quality of life vs. depression
 ggplot(data_p, aes(x = SQtotal, y = QLtotal)) + 
-  geom_point(position = "jitter", aplha = 0.7) + 
+  geom_point(position = "jitter", alpha = 0.7) + #misspelled alpha
   geom_smooth(method = "lm") +
   theme_minimal() + 
   labs(title = "Sleep Quality vs. Quality of Life in low SES individuals",
        x = "Sleep Quality", 
        y = "Quality of Life")
+#Also a great plot, consider changing the colors around this time. 
+```
 
+```{r dv4}
 #Scatterplot of quality of life vs. depression
 ggplot(data_p, aes(x = QLtotal, y = MDDtotal)) + 
-  geom_point(position = "jitter", aplha = 0.7) + 
+  geom_point(position = "jitter", alpha = 0.7) + #misspelled alpha
   geom_smooth(method = "lm") +
   theme_minimal() + 
   labs(title = "Quality of Life vs. Depression in low SES individuals",
