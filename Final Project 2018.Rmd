@@ -1,0 +1,96 @@
+---
+title: "Final Project RMD"
+author: "Alexis Adams-Clark"
+date: "11/14/2018"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+#Load libraries
+library(rio)
+library(tidyverse)
+library(here)
+library(dplyr)
+library(knitr)
+```
+
+####  Data visualizations
+```{r Data visualization}
+#Import data
+list(here())
+data <- import(here("Data", "Final_project_simulated_data.csv"))
+#View(data)
+
+#Calculate total scores
+data <- data %>% 
+  mutate(SQtotal = SQ1 + SQ2 + SQ3 + SQ4, 
+         MDDtotal = MDD1 + MDD2 + MDD3,
+         QLtotal = QL1 + QL2 + QL3)
+
+#Grouping by SES and creating a summary of MDD, SQ, and QL total scores
+scorebySES <- data %>% 
+  group_by(SES) %>% 
+  summarize(meanMDD = mean(MDDtotal),
+            meanSQ = mean(SQtotal),
+            meanQL = mean(QLtotal))
+
+#Table summary
+kable(scorebySES)
+
+#Bar graph of MDD scores by SES
+ggplot(scorebySES, aes(x = SES, y = meanMDD, fill = SES)) + 
+  geom_col(aplha = 0.7) + 
+  theme_minimal() + 
+  labs(title = "MDD Scores by SES", y = "MDD Total Score")
+```
+
+```{r Data visualization 2}
+#Select and filter data
+data_p <- data %>%  
+                select(ID, SES, EN, SQtotal, MDDtotal, QLtotal) %>% 
+                filter(SES == "LowSES")
+
+#Scatterplot of sleep quality vs. depression
+ggplot(data_p, aes(x = SQtotal, y = MDDtotal)) + 
+  geom_point(position = "jitter", aplha = 0.7) + 
+  geom_smooth(method = "lm") +
+  theme_minimal() + 
+  labs(title = "Sleep Quality vs. Depression in low SES individuals",
+       x = "Sleep Quality", 
+       y = "Depression")
+
+#Scatterplot of quality of life vs. depression
+ggplot(data_p, aes(x = SQtotal, y = QLtotal)) + 
+  geom_point(position = "jitter", aplha = 0.7) + 
+  geom_smooth(method = "lm") +
+  theme_minimal() + 
+  labs(title = "Sleep Quality vs. Quality of Life in low SES individuals",
+       x = "Sleep Quality", 
+       y = "Quality of Life")
+
+#Scatterplot of quality of life vs. depression
+ggplot(data_p, aes(x = QLtotal, y = MDDtotal)) + 
+  geom_point(position = "jitter", aplha = 0.7) + 
+  geom_smooth(method = "lm") +
+  theme_minimal() + 
+  labs(title = "Quality of Life vs. Depression in low SES individuals",
+       x = "Quality of Life", 
+       y = "Depression")
+```
+
+The mean total depression score for the sample is `r round(mean(data$MDDtotal), 2)` . The mean total sleep quality score for the sample is `r round(mean(data$SQtotal), 2)`. The mean quality of life score for the sample is`r round(mean(data$MDDtotal),2)`. 
+
+#### Demonstrate tidying messy data
+```{r gather, separate, select, filter & spread}
+# this may not be actually helpful with data analysis but it demonstrates how to run those functions
+Main_measure_data <- data %>%
+  select(ID, SQ1:QL3) %>% 
+  gather(items, value, -1) %>% 
+  separate(items, c("Measure", "Item number"), sep = "(?=[:digit:])", convert = TRUE)
+
+# again, not really helpful output but it shows how we have different columns for each race/ethnicity
+EN_data <- data %>%
+  select(ID, SES:EN) %>% 
+  spread(key = EN, value = SES) %>% 
+  filter(ED == "Postsecondary certificate")
+```
