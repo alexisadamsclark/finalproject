@@ -93,4 +93,7 @@ EN_data <- data %>%
   select(ID, SES:EN) %>% 
   spread(key = EN, value = SES) %>% 
   filter(ED == "Postsecondary certificate")
+
+
+
 ```
