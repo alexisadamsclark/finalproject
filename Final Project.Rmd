@@ -13,6 +13,7 @@ library(here)
 library(dplyr)
 library(knitr)
 library(janitor)
+library(forcats)
 ```
 
 ```{r import data, echo = FALSE}
@@ -27,8 +28,10 @@ data <- import(here("Data", "Final_project_simulated_data.csv"))
 #Calculate total scores
 
 data <- data %>% 
-  clean_names()
-View(data)
+  clean_names() %>% 
+  mutate(ses = factor(ses), 
+         ed = as.factor(ed),
+         en = as.factor(en))
 
 #sq = sleep quality, mdd = major depression, ql = quality of life
 
@@ -48,10 +51,19 @@ scorebyses <- data %>%
 kable(scorebyses, format = "html", digits = round(2))
 
 #Bar graph of MDD scores by SES
+levels(scorebyses$ses)
+scorebyses <- scorebyses %>% 
+  mutate(ses = fct_recode(ses, "High" = "HighSES", 
+                               "Med" = "MiddleSES",
+                               "Low" = "LowSES"))
+
+scorebyses$ses <- factor(scorebyses$ses, levels = c("Low", "Med", "High"))
+
 ggplot(scorebyses, aes(x = ses, y = mean_mdd, fill = ses)) + 
   geom_col(alpha = 0.7) + 
   theme_minimal() + 
-  labs(title = "MDD Scores by SES", y = "MDD Total Score")
+  labs(title = "Depression Scores by SES", y = "MDD Total Score", x = "Socioeconomic Status") + 
+  guides(fill=FALSE)
 ```
 
 ```{r Data visualization 2}
