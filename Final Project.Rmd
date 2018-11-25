@@ -23,7 +23,7 @@ data <- import(here("Data", "Final_project_simulated_data.csv"))
 ```
 
 #  Data visualizations
-```{r Data visualization and summary 1}
+```{r data table}
 #Clean names, make lowercase
 data <- data %>% 
   clean_names() %>% 
@@ -45,9 +45,6 @@ scorebyses <- data %>%
             mean_sq = mean(sq_total),
             mean_ql = mean(ql_total))
 
-#Table summary of Scores by SES
-kable(scorebyses, format = "html", digits = round(2))
-
 #Change levels of SES
 levels(scorebyses$ses)
 scorebyses <- scorebyses %>% 
@@ -57,12 +54,19 @@ scorebyses <- scorebyses %>%
 
 scorebyses$ses <- factor(scorebyses$ses, levels = c("Low", "Med", "High"))
 
+#Table summary of Scores by SES
+kable(scorebyses, format = "html", digits = round(2))
+```
+
+```{r data visualization 1}
+
 #Bar graph of MDD scores by SES
 ggplot(scorebyses, aes(x = ses, y = mean_mdd, fill = ses)) + 
   geom_col(alpha = 0.7) + 
   theme_minimal() + 
   labs(title = "Depression Scores by SES", y = "MDD Total Score", x = "Socioeconomic Status") + 
-  guides(fill=FALSE)
+  guides(fill=FALSE) #remove legend
+
 ```
 
 ```{r Data visualization 2}
@@ -97,6 +101,7 @@ ggplot(data_p, aes(x =ql_total, y = mdd_total)) +
   labs(title = "The Association between Quality of Life and Depression in Low SES Individuals",
        x = "Quality of Life", 
        y = "Depression")
+
 ```
 
 The mean total depression score for the sample is `r round(mean(data$mdd_total), 2)` . The mean total sleep quality score for the sample is `r round(mean(data$sq_total), 2)`. The mean quality of life score for the sample is`r round(mean(data$ql_total),2)`. 
