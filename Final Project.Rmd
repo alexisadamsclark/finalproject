@@ -5,7 +5,7 @@ date: "11/14/2018"
 output: html_document
 ---
 
-```{r setup, include=FALSE}
+```{r setup, include=FALSE, warning = FALSE, messages = FALSE}
 #Load libraries
 library(rio)
 library(tidyverse)
@@ -14,13 +14,15 @@ library(dplyr)
 library(knitr)
 ```
 
-####  Data visualizations
-```{r Data visualization}
+```{r import data, echo = FALSE}
 #Import data
 list(here())
 data <- import(here("Data", "Final_project_simulated_data.csv"))
 #View(data)
+```
 
+####  Data visualizations
+```{r Data visualization and summary 1}
 #Calculate total scores
 data <- data %>% 
   mutate(SQtotal = SQ1 + SQ2 + SQ3 + SQ4, 
