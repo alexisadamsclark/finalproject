@@ -1,5 +1,5 @@
 ---
-title: "Presentation"
+title: "Project Presentation"
 author: "Alexis Adams-Clark, Andrew Fridman, and Xi Yang"
 date: "11/26/2018"
 output: ioslides_presentation
@@ -32,23 +32,22 @@ knitr::opts_chunk$set(echo = FALSE)
 </center>
 
 ## First Data Table and Visualization
-
+-Mutate, Group By, Summarize
 <center>
 <img src="images/code1a.png" height="300px" width="700px" />
 </center>
 
 ## First Data Table and Visualization
-
+- Changing Order of Labels
 <center>
 <img src="images/code2a.png" height="250px" width="700px" />
 </center>
 
 ##Data Visualization- Bar Graph
-<center>
-<img src="images/output4a.png" height="250px" width="500px" />
-</center>
 
-##Data Visualization- Bar Graph
+<center>
+<img src="images/output4a.png" height="100px" width="300px" />
+</center>
 
 <center>
 <img src="images/datavis1.png" height="400px" width="600px" />
@@ -68,6 +67,8 @@ knitr::opts_chunk$set(echo = FALSE)
 
 ## Next Steps
 - Modeling using lm package
+<img src="images/lma.png" height="400px" width="700px" />
+</center>
 
 
 ## Andrew Slide #1
