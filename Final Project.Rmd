@@ -71,10 +71,13 @@ kable(scorebyses, format = "html", digits = round(2))
 
 ```{r data visualization 1}
 #Bar graph of mdd scores by ses
+
 ggplot(scorebyses, aes(x = ses, y = mean_mdd, fill = ses)) + 
   geom_col(alpha = 0.7) + 
   theme_minimal() + 
-  labs(title = "Depression Scores by SES", y = "MDD Total Score", x = "Socioeconomic Status") + 
+  labs(title = "Depression Scores by SES", 
+       y = "MDD Total Score", 
+       x = "Socioeconomic Status") + 
   guides(fill=FALSE) #remove legend
 
 ```
