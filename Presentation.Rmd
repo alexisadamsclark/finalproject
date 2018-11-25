@@ -16,11 +16,28 @@ knitr::opts_chunk$set(echo = FALSE)
 - Bullet 2
 - Bullet 3
 
-## Alexis Slide #1
+## Alexis!
 
-- Bullet 1
-- Bullet 2
-- Bullet 3
+- Github Issues
+- First Data Visualization/Table
+- Correlations
+- Next Steps for Data Analysis
+
+## Github Issues
+- Biggest Challenge
+
+## First Data Table and Visualization
+- Getting this on here was a challenge! 
+
+<center>
+<img src="images/datavis1.png" height="400px" width="600px" />
+</center>
+
+
+## Correlations
+
+## Next Steps
+- Modeling using lm package
 
 
 ## Andrew Slide #1
