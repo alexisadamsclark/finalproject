@@ -25,32 +25,31 @@ data <- import(here("Data", "Final_project_simulated_data.csv"))
 
 ####  Data visualizations
 ```{r Data visualization and summary 1}
-#Calculate total scores
-
+#Clean names, make lowercase
 data <- data %>% 
   clean_names() %>% 
   mutate(ses = factor(ses), 
          ed = as.factor(ed),
          en = as.factor(en))
 
+#Create total scores
 #sq = sleep quality, mdd = major depression, ql = quality of life
-
 data <- data %>% 
   mutate(sq_total = sq1 + sq2 + sq3 + sq4, 
          mdd_total = mdd1 + mdd2 + mdd3,
          ql_total = ql1 + ql2 + ql3)
 
-#Grouping by SES and creating a summary of MDD, SQ, and QL total scores
+#Grouping by SES and creating a summary of Depression (MDD), Sleep Quality (SQ), and Quality of Life (QL) total scores
 scorebyses <- data %>% 
   group_by(ses) %>% 
   summarize(mean_mdd = mean(mdd_total),
             mean_sq = mean(sq_total),
             mean_ql = mean(ql_total))
 
-#Table summary
+#Table summary of Scores by SES
 kable(scorebyses, format = "html", digits = round(2))
 
-#Bar graph of MDD scores by SES
+#Change levels of SES
 levels(scorebyses$ses)
 scorebyses <- scorebyses %>% 
   mutate(ses = fct_recode(ses, "High" = "HighSES", 
@@ -59,6 +58,7 @@ scorebyses <- scorebyses %>%
 
 scorebyses$ses <- factor(scorebyses$ses, levels = c("Low", "Med", "High"))
 
+#Bar graph of MDD scores by SES
 ggplot(scorebyses, aes(x = ses, y = mean_mdd, fill = ses)) + 
   geom_col(alpha = 0.7) + 
   theme_minimal() + 
