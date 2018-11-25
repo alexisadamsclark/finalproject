@@ -10,7 +10,6 @@ output: html_document
 library(rio)
 library(tidyverse)
 library(here)
-library(dplyr)
 library(knitr)
 library(janitor)
 library(forcats)
@@ -23,7 +22,7 @@ data <- import(here("Data", "Final_project_simulated_data.csv"))
 #View(data)
 ```
 
-####  Data visualizations
+#  Data visualizations
 ```{r Data visualization and summary 1}
 #Clean names, make lowercase
 data <- data %>% 
@@ -67,7 +66,7 @@ ggplot(scorebyses, aes(x = ses, y = mean_mdd, fill = ses)) +
 ```
 
 ```{r Data visualization 2}
-#Select and filter data
+#Select and filter data, looking at relationships between three outcome variables (depression, sleep quality, and quality of life) in low SES individuals
 data_p <- data %>%  
                 select(id, ses, en, sq_total, mdd_total, ql_total) %>% 
                 filter(ses == "LowSES")
@@ -77,7 +76,7 @@ ggplot(data_p, aes(x = sq_total, y = mdd_total)) +
   geom_point(position = "jitter", aplha = 0.7) + 
   geom_smooth(method = "lm") +
   theme_minimal() + 
-  labs(title = "Sleep Quality vs. Depression in low SES individuals",
+  labs(title = "The Association between Sleep Quality and Depression in Low SES Individuals",
        x = "Sleep Quality", 
        y = "Depression")
 
@@ -86,7 +85,7 @@ ggplot(data_p, aes(x = sq_total, y = ql_total)) +
   geom_point(position = "jitter", aplha = 0.7) + 
   geom_smooth(method = "lm") +
   theme_minimal() + 
-  labs(title = "Sleep Quality vs. Quality of Life in low SES individuals",
+  labs(title = "The Asssociation between Sleep Quality and Quality of Life in Low SES Individuals",
        x = "Sleep Quality", 
        y = "Quality of Life")
 
@@ -95,14 +94,14 @@ ggplot(data_p, aes(x =ql_total, y = mdd_total)) +
   geom_point(position = "jitter", aplha = 0.7) + 
   geom_smooth(method = "lm") +
   theme_minimal() + 
-  labs(title = "Quality of Life vs. Depression in low SES individuals",
+  labs(title = "The Association between Quality of Life and Depression in Low SES Individuals",
        x = "Quality of Life", 
        y = "Depression")
 ```
 
 The mean total depression score for the sample is `r round(mean(data$mdd_total), 2)` . The mean total sleep quality score for the sample is `r round(mean(data$sq_total), 2)`. The mean quality of life score for the sample is`r round(mean(data$ql_total),2)`. 
 
-#### Demonstrate tidying messy data
+# Demonstrate tidying messy data
 ```{r gather, separate, select, filter & spread}
 # this may not be actually helpful with data analysis but it demonstrates how to run those functions
 Main_measure_data <- data %>%
