@@ -24,24 +24,47 @@ knitr::opts_chunk$set(echo = FALSE)
 - Next Steps for Data Analysis
 
 ## Github Issues
-- Biggest Challenge
+- Biggest Challenge - LOL
+- Getting this photo on here was also a challenge
+
+<center>
+<img src="images/LOL.png" height="300px" width="500px" />
+</center>
 
 ## First Data Table and Visualization
 
 <center>
-<img src="images/code1a.png" height="400px" width="600px" />
+<img src="images/code1a.png" height="300px" width="700px" />
 </center>
 
+## First Data Table and Visualization
+
+<center>
+<img src="images/code2a.png" height="250px" width="700px" />
+</center>
 
 ##Data Visualization- Bar Graph
-- Getting this on here was a challenge! 
+<center>
+<img src="images/output4a.png" height="250px" width="500px" />
+</center>
+
+##Data Visualization- Bar Graph
 
 <center>
 <img src="images/datavis1.png" height="400px" width="600px" />
 </center>
 
+## Correlations
+
+<center>
+<img src="images/output5a.png" height="250px" width="700px" />
+</center>
 
 ## Correlations
+
+<center>
+<img src="images/output6a.png" height="250px" width="700px" />
+</center>
 
 ## Next Steps
 - Modeling using lm package
