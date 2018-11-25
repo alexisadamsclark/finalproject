@@ -27,46 +27,56 @@ knitr::opts_chunk$set(echo = FALSE)
 - Biggest Challenge - LOL
 - Getting this photo on here was also a challenge
 
+\newline
+
 <center>
 <img src="images/LOL.png" height="300px" width="500px" />
 </center>
 
 ## First Data Table and Visualization
--Mutate, Group By, Summarize
+- Mutate, Group By, Summarize
+
+\newline
+
 <center>
 <img src="images/code1a.png" height="300px" width="700px" />
 </center>
 
 ## First Data Table and Visualization
 - Changing Order of Labels
+
+\newline
+
 <center>
 <img src="images/code2a.png" height="250px" width="700px" />
 </center>
 
 ##Data Visualization- Bar Graph
-
 <center>
 <img src="images/output4a.png" height="100px" width="300px" />
 </center>
+
+\newline
 
 <center>
 <img src="images/datavis1.png" height="400px" width="600px" />
 </center>
 
 ## Correlations
-
 <center>
 <img src="images/output5a.png" height="250px" width="700px" />
 </center>
 
 ## Correlations
-
 <center>
 <img src="images/output6a.png" height="250px" width="700px" />
 </center>
 
 ## Next Steps
 - Modeling using lm package
+
+\newline
+
 <img src="images/lma.png" height="400px" width="700px" />
 </center>
 
