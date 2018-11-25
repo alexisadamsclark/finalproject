@@ -13,6 +13,7 @@ library(here)
 library(knitr)
 library(janitor)
 library(forcats)
+library(Hmisc)
 ```
 
 ```{r import data, include = FALSE, warning = FALSE, messages = FALSE}
@@ -29,7 +30,17 @@ data <- data %>%
   clean_names() %>% 
   mutate(ses = as.factor(ses), 
          ed = as.factor(ed),
-         en = as.factor(en))
+         en = as.factor(en),
+         sq1 = as.numeric(sq1),
+         sq2 = as.numeric(sq2),
+         sq3 = as.numeric(sq3), 
+         sq4 = as.numeric(sq4),
+         mdd1 = as.numeric(mdd1),
+         mdd2 = as.numeric(mdd2),
+         mdd3 = as.numeric(mdd3),
+         ql1 = as.numeric(ql1),
+         ql2 = as.numeric(ql2),
+         ql3 = as.numeric(ql3))
 
 #Create total scores
 #sq = sleep quality, mdd = major depression, ql = quality of life
@@ -38,14 +49,14 @@ data <- data %>%
          mdd_total = mdd1 + mdd2 + mdd3,
          ql_total = ql1 + ql2 + ql3)
 
-#Grouping by SES and creating a summary of Depression (MDD), Sleep Quality (SQ), and Quality of Life (QL) total scores
+#Grouping by ses and creating a summary of Depression (mdd), Sleep Quality (sq), and Quality of Life (ql) total scores
 scorebyses <- data %>% 
   group_by(ses) %>% 
-  summarize(mean_mdd = mean(mdd_total),
+  dplyr::summarize(mean_mdd = mean(mdd_total),
             mean_sq = mean(sq_total),
             mean_ql = mean(ql_total))
 
-#Change levels of SES
+#Change levels of ses
 levels(scorebyses$ses)
 scorebyses <- scorebyses %>% 
   mutate(ses = fct_recode(ses, "High" = "HighSES", 
@@ -54,12 +65,12 @@ scorebyses <- scorebyses %>%
 
 scorebyses$ses <- factor(scorebyses$ses, levels = c("Low", "Med", "High"))
 
-#Table summary of Scores by SES
+#Table summary of scores by ses
 kable(scorebyses, format = "html", digits = round(2))
 ```
 
 ```{r data visualization 1}
-#Bar graph of MDD scores by SES
+#Bar graph of mdd scores by ses
 ggplot(scorebyses, aes(x = ses, y = mean_mdd, fill = ses)) + 
   geom_col(alpha = 0.7) + 
   theme_minimal() + 
@@ -100,6 +111,21 @@ ggplot(data_p, aes(x =ql_total, y = mdd_total)) +
   labs(title = "The Association between Quality of Life and Depression in Low SES Individuals",
        x = "Quality of Life", 
        y = "Depression")
+
+```
+
+```{r Correlations}
+
+#Correlations between the three outome variables
+data_corr <- data %>% 
+  select(ends_with("total"))
+
+#Pretty correlation table with pearson r
+corr <- cor(data_corr)
+kable(corr)
+
+#Corrlation values with p-values
+rcorr(as.matrix(data_corr))
 
 ```
 
