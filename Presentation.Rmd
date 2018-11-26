@@ -138,7 +138,7 @@ quality of life indices
 </center>
 
 
-##Pretty plots and pretty data!
+##Andrew with some pretty plots and pretty data!
 
 - Data visualization
     - Series of scatterplots
@@ -184,13 +184,13 @@ quality of life indices
 ## Tidying data - Gather, separate, and spread
 
 <left>
-<img src="images/code_t.png" height="175px" width="640px" />
+<img src="images/code_t.png" height="175px" width="500px" />
 </left>
 
 \newline
 
 <left>
-<img src="images/tt.png" height="275px" width="340px" />
+<img src="images/tt.png" height="270px" width="310px" />
 </left>
 
 ## Plotting the tidy data
