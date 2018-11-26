@@ -129,7 +129,7 @@ knitr::opts_chunk$set(echo = FALSE)
 ## Tidying data - Select, gather, and separate
 
 <left>
-<img src="images/code_sp3.png" height="125px" width="500px" />
+<img src="images/tidy1.png" height="125px" width="600px" />
 </left>
 
 \newline
@@ -141,7 +141,7 @@ knitr::opts_chunk$set(echo = FALSE)
 ## Tidying data - Spread and filter
 
 <left>
-<img src="images/code_sp3.png" height="125px" width="500px" />
+<img src="images/tidy2.png" height="100px" width="350px" />
 </left>
 
 \newline
