@@ -155,7 +155,7 @@ data_tp <- data_t %>%
 #Scatterplot of tidy data
 ggplot(data_tp, aes(x = Item, y = DiffSES)) + 
   geom_col(alpha = 0.7) + 
-  labs(title = "High-to-Low SES Difference in MDD scores",
+  labs(title = "Low-to-High SES Difference in MDD scores",
        x = "Item", 
        y = "Difference")
 ```

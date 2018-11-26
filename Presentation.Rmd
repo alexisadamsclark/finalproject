@@ -141,7 +141,7 @@ knitr::opts_chunk$set(echo = FALSE)
 ## Plotting the tidy data
 
 <left>
-<img src="images/code_tp.png" height="200px" width="375px" />
+<img src="images/code_tp.png" height="175px" width="375px" />
 </left>
 
 \newline
