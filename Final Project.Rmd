@@ -134,17 +134,13 @@ The mean total depression score for the sample is `r round(mean(data$mdd_total),
 
 # Demonstrate tidying messy data
 ```{r gather, separate, select, filter & spread}
-#Tidy demonstration
-Main_measure_data <- data %>%
-  select(id, sq1:ql3) %>% 
-  gather(items, value, -1) %>% 
-  separate(items, c("Measure", "Item number"), sep = "(?=[:digit:])", convert = TRUE)
-
-View(Main_measure_data)
-
-#Tidy demonstration
-EN_data <- data %>%
-  select(id, ses:en) %>% 
-  spread(key = en, value = ses) %>% 
-  filter(ed == "Postsecondary certificate")
+#Gather, separate, and spread demo
+data_t <- data %>%  
+                select(id, en, 5:14) %>% 
+                gather(items, Value, -1:-2) %>% 
+                separate(items, c("Measure", "Item"), sep = "(?=[:digit:])", convert = TRUE) %>% 
+                group_by(en, Measure, Item) %>% 
+                summarise(Value_mean = mean(Value)) %>% 
+                spread(key = en, value = Value_mean)
+kable(data_t)
 ```
