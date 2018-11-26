@@ -14,6 +14,7 @@ library(knitr)
 library(janitor)
 library(forcats)
 library(Hmisc)
+theme_set(theme_minimal())
 ```
 
 ```{r import data, include = FALSE, warning = FALSE, messages = FALSE}
@@ -74,7 +75,6 @@ kable(scorebyses, format = "html", digits = round(2))
 
 ggplot(scorebyses, aes(x = ses, y = mean_mdd, fill = ses)) + 
   geom_col(alpha = 0.7) + 
-  theme_minimal() + 
   labs(title = "Depression Scores by SES", 
        y = "MDD Total Score", 
        x = "Socioeconomic Status") + 
@@ -85,7 +85,6 @@ ggplot(scorebyses, aes(x = ses, y = mean_mdd, fill = ses)) +
 ```{r Data visualization 2}
 #Global settings
 opts_chunk$set(fig.width = 5, fig.height = 7)
-theme_set(theme_minimal())
 
 #Select and filter data, looking at relationships between three outcome variables (depression, sleep quality, and quality of life) in low SES individuals
 data_p <- data %>%  

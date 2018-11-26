@@ -18,14 +18,60 @@ knitr::opts_chunk$set(echo = FALSE)
 - Celebrations
 - Continued steps
 
+## Data Simulation
+
+- Why? 
+    - Dataset on github is likely to be open to the public, 
+per Daniel's suggestion, we decided to simulate a dataset
+- What? 
+    - *Main variables:* 
+        - Continuous measures of sleep quality, 
+depression symptoms, 
+quality of life indices
+    - Covariates: 
+        - socioeconomic status, education, and ethnicity
+- How?
+    - Simstudy package
+
+\newline
+
+<center>
+<img src="images/Simstudy_package.png" height="600px" width="600px" />
+</center>
+
 ## Data Simulation Challenges
 
-- Because dataset on github is likely to be open to the public, 
-  per Daniel's suggestion, we decided to simulate a dataset
-- Celebrations
-- Continued steps
+- specify hidden correlations among the variables
+    - Past error: Lower life quality was associated with higher sleep quality and depression?
+- specify scale item ranges
+    - Past error: Negative values for the items?
 
+## Data Simulation Celebrations
+- specify hidden correlations among the variables
+\newline
 
+<center>
+<img src="images/Specify_correlations.png" height="600px" width="500px" />
+</center>
+
+    - mu: a vector of means
+    - sigma: standard deviation of variables
+    - cs: a compound symmetry structure
+
+- specify scale item ranges
+    - dt <- dt %>%
+  filter(QL1 > 0 & QL3 > 0 & SQ2 > 0 & SQ4 > 0) %>%
+  filter(MDD2 < 6)
+
+## Data Simulation Continued Steps
+- utilize more effective functions
+\newline
+
+<center>
+<img src="images/More_desired_function.png" height="600px" width="600px" />
+</center>
+
+- clean up the script structure
 
 ## Alexis!
 
