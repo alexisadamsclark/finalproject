@@ -12,11 +12,20 @@ knitr::opts_chunk$set(echo = FALSE)
 ```
 
 
-## Xi Slide #1
+## Xi on Data Simulation
 
-- Bullet 1
-- Bullet 2
-- Bullet 3
+- Challenges
+- Celebrations
+- Continued steps
+
+## Data Simulation Challenges
+
+- Because dataset on github is likely to be open to the public, 
+  per Daniel's suggestion, we decided to simulate a dataset
+- Celebrations
+- Continued steps
+
+
 
 ## Alexis!
 
