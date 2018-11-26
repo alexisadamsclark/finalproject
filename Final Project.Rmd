@@ -83,6 +83,10 @@ ggplot(scorebyses, aes(x = ses, y = mean_mdd, fill = ses)) +
 ```
 
 ```{r Data visualization 2}
+#Global settings
+opts_chunk$set(fig.width = 5, fig.height = 7)
+theme_set(theme_minimal())
+
 #Select and filter data, looking at relationships between three outcome variables (depression, sleep quality, and quality of life) in low SES individuals
 data_p <- data %>%  
                 select(id, ses, en, sq_total, mdd_total, ql_total) %>% 
@@ -92,7 +96,6 @@ data_p <- data %>%
 ggplot(data_p, aes(x = sq_total, y = mdd_total)) + 
   geom_point(position = "jitter", alpha = 0.7) + 
   geom_smooth(method = "lm") +
-  theme_minimal() + 
   labs(title = "The Association between Sleep Quality & Depression in Low SES Individuals",
        x = "Sleep Quality", 
        y = "Depression")
@@ -101,7 +104,6 @@ ggplot(data_p, aes(x = sq_total, y = mdd_total)) +
 ggplot(data_p, aes(x = sq_total, y = ql_total)) + 
   geom_point(position = "jitter", alpha = 0.7) + 
   geom_smooth(method = "lm") +
-  theme_minimal() + 
   labs(title = "The Asssociation between Sleep Quality & Quality of Life in Low SES Individuals",
        x = "Sleep Quality", 
        y = "Quality of Life")
@@ -110,7 +112,6 @@ ggplot(data_p, aes(x = sq_total, y = ql_total)) +
 ggplot(data_p, aes(x =ql_total, y = mdd_total)) + 
   geom_point(position = "jitter", alpha = 0.7) + 
   geom_smooth(method = "lm") +
-  theme_minimal() + 
   labs(title = "The Association between Quality of Life & Depression in Low SES Individuals",
        x = "Quality of Life", 
        y = "Depression")
