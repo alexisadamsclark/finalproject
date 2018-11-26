@@ -152,10 +152,9 @@ kable(data_t)
 data_tp <- data_t %>%  
                 filter(Measure == "mdd")
 
-#Scatterplot of X
+#Scatterplot of tidy data
 ggplot(data_tp, aes(x = Item, y = DiffSES)) + 
   geom_col(alpha = 0.7) + 
-  #geom_smooth(method = "lm") +
   labs(title = "High-to-Low SES Difference in MDD scores",
        x = "Item", 
        y = "Difference")
