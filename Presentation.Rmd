@@ -149,60 +149,62 @@ quality of life indices
 
 ## Data Visualization - Scatterplot 1
 
-<left>
+<center>
 <img src="images/code_sp1.png" height="125px" width="500px" />
-</left>
+</center>
 
 \newline
 
-<left>
+<center>
 <img src="images/sp1.png" height="400px" width="600px" />
-</left>
+</center>
 
 ## Data Visualization - Scatterplot 2
 
-<left>
+<center>
 <img src="images/code_sp2.png" height="125px" width="500px" />
-</left>
+</center>
 
 \newline
 
-<left>
+<center>
 <img src="images/sp2.png" height="400px" width="600px" />
-</left>
+</center>
 
 ## Data Visualization - Scatterplot 3
 
-<left>
+<center>
 <img src="images/code_sp3.png" height="125px" width="500px" />
-</left>
+</center>
 
 \newline
 
-<left>
+<center>
 <img src="images/sp3.png" height="400px" width="600px" />
-</left>
+</center>
 
 ## Tidying data - Gather, separate, and spread
 
-<left>
+<center>
 <img src="images/code_t.png" height="175px" width="500px" />
-</left>
+</center>
 
 \newline
 
-<left>
-<img src="images/tt.png" height="270px" width="310px" />
-</left>
+<center>
+<img src="images/tt.png" height="270px" width="200px" />
+</center>
 
 ## Plotting the tidy data
 
-<left>
+<center>
 <img src="images/code_tp.png" height="175px" width="375px" />
-</left>
+</center>
 
 \newline
 
-<left>
+<center>
 <img src="images/tp.png" height="400px" width="600px" />
-</left>
+</center>
+
+##The End! Thanks!
