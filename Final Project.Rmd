@@ -93,7 +93,7 @@ ggplot(data_p, aes(x = sq_total, y = mdd_total)) +
   geom_point(position = "jitter", alpha = 0.7) + 
   geom_smooth(method = "lm") +
   theme_minimal() + 
-  labs(title = "The Association between Sleep Quality and Depression in Low SES Individuals",
+  labs(title = "The Association between Sleep Quality & Depression in Low SES Individuals",
        x = "Sleep Quality", 
        y = "Depression")
 
@@ -102,7 +102,7 @@ ggplot(data_p, aes(x = sq_total, y = ql_total)) +
   geom_point(position = "jitter", alpha = 0.7) + 
   geom_smooth(method = "lm") +
   theme_minimal() + 
-  labs(title = "The Asssociation between Sleep Quality and Quality of Life in Low SES Individuals",
+  labs(title = "The Asssociation between Sleep Quality & Quality of Life in Low SES Individuals",
        x = "Sleep Quality", 
        y = "Quality of Life")
 
@@ -111,23 +111,22 @@ ggplot(data_p, aes(x =ql_total, y = mdd_total)) +
   geom_point(position = "jitter", alpha = 0.7) + 
   geom_smooth(method = "lm") +
   theme_minimal() + 
-  labs(title = "The Association between Quality of Life and Depression in Low SES Individuals",
+  labs(title = "The Association between Quality of Life & Depression in Low SES Individuals",
        x = "Quality of Life", 
        y = "Depression")
 
 ```
 
 ```{r correlations}
-
 #Correlations between the three outome variables
 data_corr <- data %>% 
   select(ends_with("total"))
 
-#Pretty correlation table with pearson r
+#Pretty correlation table with Pearson r
 corr <- cor(data_corr)
 kable(corr)
 
-#Corrlation values with p-values
+#Correlation values with p-values
 rcorr(as.matrix(data_corr))
 ```
 
@@ -135,13 +134,13 @@ The mean total depression score for the sample is `r round(mean(data$mdd_total),
 
 # Demonstrate tidying messy data
 ```{r gather, separate, select, filter & spread}
-# this may not be actually helpful with data analysis but it demonstrates how to run those functions
+#This may not be actually helpful with data analysis but it demonstrates how to run those functions
 Main_measure_data <- data %>%
   select(id, sq1:ql3) %>% 
   gather(items, value, -1) %>% 
   separate(items, c("Measure", "Item number"), sep = "(?=[:digit:])", convert = TRUE)
 
-# again, not really helpful output but it shows how we have different columns for each race/ethnicity
+#Again, not really helpful output but it shows how we have different columns for each race/ethnicity
 EN_data <- data %>%
   select(id, ses:en) %>% 
   spread(key = en, value = ses) %>% 
