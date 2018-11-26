@@ -83,7 +83,7 @@ knitr::opts_chunk$set(echo = FALSE)
 </center>
 
 
-## Andrew
+##Pretty plots and pretty data!
 
 - Data visualization
     - Series of scatterplots
@@ -129,11 +129,23 @@ knitr::opts_chunk$set(echo = FALSE)
 ## Tidying data - Gather, separate, and spread
 
 <left>
-<img src="images/tidy1.png" height="125px" width="600px" />
+<img src="images/code_t.png" height="175px" width="640px" />
 </left>
 
 \newline
 
 <left>
-<img src="images/tidy2.png" height="325px" width="525px" />
+<img src="images/tt.png" height="275px" width="340px" />
+</left>
+
+## Plotting the tidy data
+
+<left>
+<img src="images/code_tp.png" height="200px" width="375px" />
+</left>
+
+\newline
+
+<left>
+<img src="images/tp.png" height="400px" width="600px" />
 </left>
