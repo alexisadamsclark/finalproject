@@ -140,6 +140,8 @@ Main_measure_data <- data %>%
   gather(items, value, -1) %>% 
   separate(items, c("Measure", "Item number"), sep = "(?=[:digit:])", convert = TRUE)
 
+View(Main_measure_data)
+
 #Tidy demonstration
 EN_data <- data %>%
   select(id, ses:en) %>% 
