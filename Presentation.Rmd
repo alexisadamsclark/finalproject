@@ -88,7 +88,7 @@ knitr::opts_chunk$set(echo = FALSE)
 - Data visualization
     - Series of scatterplots
 - Tidying data
-    - Select, filter, gather, and separate
+    - Gather, separate, and spread
 
 ## Data Visualization - Scatterplot 1
 
@@ -126,7 +126,7 @@ knitr::opts_chunk$set(echo = FALSE)
 <img src="images/sp3.png" height="400px" width="600px" />
 </left>
 
-## Tidying data - Select, gather, and separate
+## Tidying data - Gather, separate, and spread
 
 <left>
 <img src="images/tidy1.png" height="125px" width="600px" />
@@ -135,17 +135,5 @@ knitr::opts_chunk$set(echo = FALSE)
 \newline
 
 <left>
-<img src="images/sp3.png" height="400px" width="600px" />
-</left>
-
-## Tidying data - Spread and filter
-
-<left>
-<img src="images/tidy2.png" height="100px" width="350px" />
-</left>
-
-\newline
-
-<left>
-<img src="images/sp3.png" height="400px" width="600px" />
+<img src="images/tidy2.png" height="325px" width="525px" />
 </left>
