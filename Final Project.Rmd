@@ -136,11 +136,27 @@ The mean total depression score for the sample is `r round(mean(data$mdd_total),
 ```{r gather, separate, select, filter & spread}
 #Gather, separate, and spread demo
 data_t <- data %>%  
-                select(id, en, 5:14) %>% 
+                select(id, ses, 5:14) %>% 
                 gather(items, Value, -1:-2) %>% 
                 separate(items, c("Measure", "Item"), sep = "(?=[:digit:])", convert = TRUE) %>% 
-                group_by(en, Measure, Item) %>% 
+                group_by(ses, Measure, Item) %>% 
                 summarise(Value_mean = mean(Value)) %>% 
-                spread(key = en, value = Value_mean)
+                spread(key = ses, value = Value_mean) %>% 
+                mutate(DiffSES = LowSES - HighSES) %>% 
+                select(Measure, Item, DiffSES)
 kable(data_t)
+```
+
+```{r Plot tidy data}
+#Subset data for plot
+data_tp <- data_t %>%  
+                filter(Measure == "mdd")
+
+#Scatterplot of X
+ggplot(data_tp, aes(x = Item, y = DiffSES)) + 
+  geom_col(alpha = 0.7) + 
+  #geom_smooth(method = "lm") +
+  labs(title = "High-to-Low SES Difference in MDD scores",
+       x = "Item", 
+       y = "Difference")
 ```
