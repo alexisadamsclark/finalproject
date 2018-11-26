@@ -51,7 +51,7 @@ quality of life indices
 \newline
 
 <center>
-<img src="images/Specify_correlations.png" height="600px" width="500px" />
+<img src="images/Specify_correlations.png" height="600px" width="800px" />
 </center>
 
     - mu: a vector of means
@@ -87,7 +87,7 @@ quality of life indices
 \newline
 
 <center>
-<img src="images/LOL.png" height="300px" width="500px" />
+<img src="images/LOL.png" height="400px" width="700px" />
 </center>
 
 ## First Data Table and Visualization
@@ -114,6 +114,7 @@ quality of life indices
 </center>
 
 \newline
+\newline
 
 <center>
 <img src="images/datavis1.png" height="400px" width="600px" />
@@ -134,6 +135,7 @@ quality of life indices
 
 \newline
 
+<center>
 <img src="images/lma.png" height="400px" width="700px" />
 </center>
 
