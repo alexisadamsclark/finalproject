@@ -2,7 +2,9 @@
 title: "Project Presentation"
 author: "Alexis Adams-Clark, Andrew Fridman, and Xi Yang"
 date: "11/26/2018"
-output: ioslides_presentation
+output:
+  slidy_presentation: default
+  ioslides_presentation: default
 ---
 
 ```{r setup, include=FALSE}
@@ -81,12 +83,69 @@ knitr::opts_chunk$set(echo = FALSE)
 </center>
 
 
-## Andrew Slide #1
+## Andrew
 
-- Bullet 1
-- Bullet 2
-- Bullet 3
+- Data visualization
+    - Series of scatterplots
+- Tidying data
+    - Select, filter, gather, and separate
 
+## Data Visualization - Scatterplot 1
 
+<left>
+<img src="images/code_sp1.png" height="125px" width="500px" />
+</left>
 
+\newline
 
+<left>
+<img src="images/sp1.png" height="400px" width="600px" />
+</left>
+
+## Data Visualization - Scatterplot 2
+
+<left>
+<img src="images/code_sp2.png" height="125px" width="500px" />
+</left>
+
+\newline
+
+<left>
+<img src="images/sp2.png" height="400px" width="600px" />
+</left>
+
+## Data Visualization - Scatterplot 3
+
+<left>
+<img src="images/code_sp3.png" height="125px" width="500px" />
+</left>
+
+\newline
+
+<left>
+<img src="images/sp3.png" height="400px" width="600px" />
+</left>
+
+## Tidying data - Select, gather, and separate
+
+<left>
+<img src="images/code_sp3.png" height="125px" width="500px" />
+</left>
+
+\newline
+
+<left>
+<img src="images/sp3.png" height="400px" width="600px" />
+</left>
+
+## Tidying data - Spread and filter
+
+<left>
+<img src="images/code_sp3.png" height="125px" width="500px" />
+</left>
+
+\newline
+
+<left>
+<img src="images/sp3.png" height="400px" width="600px" />
+</left>
