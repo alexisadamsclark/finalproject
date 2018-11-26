@@ -1,6 +1,6 @@
 ---
 title: "Final Project RMD"
-author: "Alexis Adams-Clark"
+author: "Alexis Adams-Clark, Andrew Fridman, & Xi Yang"
 date: "11/14/2018"
 output: html_document
 ---
@@ -114,7 +114,6 @@ ggplot(data_p, aes(x =ql_total, y = mdd_total)) +
   labs(title = "The Association between Quality of Life & Depression in Low SES Individuals",
        x = "Quality of Life", 
        y = "Depression")
-
 ```
 
 ```{r correlations}
