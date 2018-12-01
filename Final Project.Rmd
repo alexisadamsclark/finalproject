@@ -148,7 +148,10 @@ data_t <- data %>%
                 summarise(Value_mean = mean(Value)) %>% 
                 spread(key = ses, value = Value_mean) %>% 
                 mutate(DiffSES = LowSES - HighSES) %>% 
-                select(Measure, Item, DiffSES)
+                select(Measure, Item, DiffSES) %>% 
+                spread(key = Measure, value = Item) %>% 
+                arrange(mdd, ql, sq)
+View(data_t)
 kable(data_t)
 ```
 
