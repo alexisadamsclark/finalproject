@@ -14,6 +14,7 @@ library(knitr)
 library(janitor)
 library(forcats)
 library(Hmisc)
+library(gridExtra)
 theme_set(theme_minimal())
 ```
 
@@ -92,28 +93,33 @@ data_p <- data %>%
                 filter(ses == "LowSES")
 
 #Scatterplot of sleep quality vs. depression
-ggplot(data_p, aes(x = sq_total, y = mdd_total)) + 
-  geom_point(position = "jitter", alpha = 0.7) + 
-  geom_smooth(method = "lm") +
-  labs(title = "The Association between Sleep Quality & Depression in Low SES Individuals",
-       x = "Sleep Quality", 
-       y = "Depression")
+sp1 <- ggplot(data_p, aes(x = sq_total, y = mdd_total)) + 
+              geom_point(position = position_jitter(w = 0.1, h = 0), alpha = 0.7) + 
+              geom_smooth(method = "lm") +
+              labs(title = "Sleep Quality & Depression",
+                   x = "Sleep Quality", 
+                   y = "Depression")
 
 #Scatterplot of quality of life vs. depression
-ggplot(data_p, aes(x = sq_total, y = ql_total)) + 
-  geom_point(position = "jitter", alpha = 0.7) + 
-  geom_smooth(method = "lm") +
-  labs(title = "The Asssociation between Sleep Quality & Quality of Life in Low SES Individuals",
-       x = "Sleep Quality", 
-       y = "Quality of Life")
+sp2 <- ggplot(data_p, aes(x = sq_total, y = ql_total)) + 
+              geom_point(position = position_jitter(w = 0.1, h = 0), alpha = 0.7) + 
+              geom_smooth(method = "lm") +
+              labs(title = "Sleep Quality & Quality of Life",
+                   x = "Sleep Quality", 
+                   y = "Quality of Life")
 
 #Scatterplot of quality of life vs. depression
-ggplot(data_p, aes(x = ql_total, y = mdd_total)) + 
-  geom_point(position = "jitter", alpha = 0.7) + 
-  geom_smooth(method = "lm") +
-  labs(title = "The Association between Quality of Life & Depression in Low SES Individuals",
-       x = "Quality of Life", 
-       y = "Depression")
+sp3 <- ggplot(data_p, aes(x = ql_total, y = mdd_total)) + 
+              geom_point(position = position_jitter(w = 0.1, h = 0), alpha = 0.7) + 
+              geom_smooth(method = "lm") +
+              labs(title = "Quality of Life & Depression",
+                   x = "Quality of Life", 
+                   y = "Depression")
+
+#Facet wrap three plots
+sp_grid <- grid.arrange(sp1, sp2, sp3, 
+                        ncol = 1,
+                        top = "The Association between Study Measures in Low SES Individuals")
 ```
 
 ```{r correlations}
