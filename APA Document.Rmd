@@ -71,8 +71,19 @@ knitr::opts_chunk$set(cache.extra = knitr::rand_seed)
 We report how we determined our sample size, all data exclusions (if any), all manipulations, and all measures in the study. <!-- 21-word solution (Simmons, Nelson & Simonsohn, 2012; retrieved from http://ssrn.com/abstract=2160588) -->
 
 ## Participants
+Participants were recruited through the University of Oregon Human Subjects Pool, consisting of undergraduate students enrolled in introductory psychology and linguistics courses. Students received academic credit in exchange for their participants. Participants were not aware of the subject of the study before scheduling their participation, so participants did not self-select into the study. Although they could leave the study after reading informed consent, no participants chose to do so. The University’s Office of Research Compliance (Institutional Review Board) approved this study. 
+
+In total, [#] participants were included in this study, all of who had complete data. [insert demographic characteristics]
 
 ## Material
+
+###Depression Scale
+
+###Quality of Life Scale
+
+###Sleep Quality Scale
+
+###Demographics Questionnaire
 
 ## Procedure
 
