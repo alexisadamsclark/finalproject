@@ -3,24 +3,23 @@ title             : "Final Project: The Relationship between Sleep, Depression, 
 shorttitle        : "Title"
 
 author: 
-  - name          : "First Author"
+  - name          : "Alexis Adams-Clark"
     affiliation   : "1"
     corresponding : yes    # Define only one corresponding author
-    address       : "Postal address"
-    email         : "my@email.com"
-  - name          : "Ernst-August Doelle"
-    affiliation   : "1,2"
+    address       : "1585 E 13th Ave, Straub 339, Eugene, OR 97403"
+    email         : "aadamscl@uoregon.edu"
+  - name          : "Andrew Fridman"
+    affiliation   : "1"
+  - name          : "Xi Yang"
+    affiliation   : "1"
 
 affiliation:
   - id            : "1"
-    institution   : "Wilhelm-Wundt-University"
-  - id            : "2"
-    institution   : "Konstanz Business School"
+    institution   : "University of Oregon Department of Psychology"
 
 authornote: |
-  Add complete departmental affiliations for each author here. Each new line herein must be indented, like this line.
 
-  Enter author note here.
+  We would like to acknowledge Daniel Anderson for introducing us to Papaja and our classmates in Introduction to Data Science with R.
 
 abstract: |
   One or two sentences providing a **basic introduction** to the field,  comprehensible to a scientist in any discipline.
