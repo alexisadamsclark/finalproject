@@ -1,6 +1,6 @@
 ---
 title             : "Final Project: The Relationship between Sleep, Depression, and Quality of Life"
-shorttitle        : "Title"
+shorttitle        : "Final Project"
 
 author: 
   - name          : "Alexis Adams-Clark"
@@ -38,7 +38,7 @@ abstract: |
   
   <!-- https://tinyurl.com/ybremelq -->
   
-keywords          : "keywords"
+keywords          : "sleep, depression, quality of life"
 wordcount         : "X"
 
 bibliography      : ["r-references.bib"]
@@ -47,7 +47,7 @@ floatsintext      : no
 figurelist        : no
 tablelist         : no
 footnotelist      : no
-linenumbers       : yes
+linenumbers       : no
 mask              : no
 draft             : no
 
@@ -65,7 +65,6 @@ library("papaja")
 set.seed(42)
 knitr::opts_chunk$set(cache.extra = knitr::rand_seed)
 ```
-
 
 
 # Methods
