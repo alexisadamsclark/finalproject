@@ -1,5 +1,5 @@
 ---
-title             : "Final Project: The Relationship between Sleep, Depression, and Quality of Life"
+title             : "Final Project: The Relationships between Sleep, Depression, Quality of Life, and Socioeconomic Status"
 shorttitle        : "Final Project"
 
 author: 
