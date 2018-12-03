@@ -74,7 +74,7 @@ Participants were recruited through the University of Oregon Human Subjects Pool
 
 In total, [#] participants were included in this study, all of who had complete data. [insert demographic characteristics]
 
-## Material
+## Materials
 
 ###Depressive Symptoms Scale
 
@@ -88,11 +88,14 @@ A scale to measure participants’ sleep quality was created by the researchers.
 
 
 ###Demographics Questionnaire
+Participants were also asked to complete a demongraphics quationnaire, which asked about their socioeconomic status, race/ethnicity, and educational background. 
 
 ## Procedure
 
+[need to insert]
+
 ## Data analysis
-We used `r cite_r("r-references.bib")` for all our analyses.
+We used `r cite_r("r-references.bib")` for all our analyses. The authors interpreted our correlational results as small (.10-.29), medium (.30-.49), and large correlations (.50-1.00).
 
 
 # Results
