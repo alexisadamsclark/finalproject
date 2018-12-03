@@ -163,10 +163,13 @@ scorebyses <- scorebyses %>%
           SES = ses)
 ```
 
-```{r Table 1, echo = FALSE}
+```{r Table 1, results = "asis"}
 
-kable(scorebyses, format = "html", digits = round(2), caption = "Table 1: Depression, Sleep Quality, and Quality of Life Scores by SES", align = "c") %>% 
-  kable_styling(bootstrap_options = "striped", full_width = F, position = "left")
+apa_table(scorebyses, 
+          caption = "Mean Depression, Sleep Quality, and Quality of Life Scores by SES Group.",  
+          note = "This table was created with apa_table()",
+          align = "c")
+
 ```
 
 

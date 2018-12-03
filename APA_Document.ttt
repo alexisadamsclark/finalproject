@@ -1,0 +1,22 @@
+\begin{table*}[hbt]
+\ifnextchar[{\eatarg}{}
+[tbp]
+\begin{center}
+\begin{threeparttable}
+\caption{\label{tab:Table 1}Mean Depression, Sleep Quality, and Quality of Life Scores by SES Group.}
+\begin{tabular}{cccc}
+\toprule
+SES & \multicolumn{1}{c}{Mean Depression Score} & \multicolumn{1}{c}{Mean Sleep Quality Score} & \multicolumn{1}{c}{Mean Quality of Life Score}\\
+\midrule
+High & 7.30 & 12.52 & 9.89\\
+Low & 7.38 & 13.41 & 10.02\\
+Med & 7.25 & 13.86 & 9.94\\
+\bottomrule
+\addlinespace
+\end{tabular}
+\begin{tablenotes}[para]
+\normalsize{\textit{Note.} This table was created with apa\_table()}
+\end{tablenotes}
+\end{threeparttable}
+\end{center}
+\end{table*}
