@@ -72,7 +72,7 @@ knitr::opts_chunk$set(cache.extra = knitr::rand_seed)
 ## Participants
 Participants were recruited through the University of Oregon Human Subjects Pool consisting of undergraduate students enrolled in introductory psychology and linguistics courses. Students received academic credit in exchange for their participants. Participants were not aware of the subject of the study before scheduling their participation, so participants did not self-select into the study. Although they could leave the study after reading informed consent, no participants chose to do so. 
 
-In total, [#] participants were included in this study, all of who had complete data. [insert demographic characteristics]
+In total, [#] participants were included in this study, all of who had complete data. [i need to insert demographic characteristics]
 
 ## Materials
 
@@ -204,16 +204,16 @@ The mean depression total score for the sample is `r round(mean(data$mdd_total),
 Depressive symptoms, sleep quality, and quality of life scores were significantly correlated with each other, *p* < .05 (see Table 2). 
 
 ##Exploratory Analyses in Low SES Individuals
-The relationships between these depressive symptoms, sleep quality, and quality of life scores in low SES individuals are displayed in Figure 2. 
+The relationships between these depressive symptoms, sleep quality, and quality of life scores in low SES individuals are displayed in Figure 2. [need to input tidied and spread data in low SES individuals and I need to mess with aspect ratios of figures]
 
 ```{r correlations, include = FALSE}
 #Correlations between the three outome variables
 data_corr <- data %>% 
   select(ends_with("total"))
 data_corr <- data_corr%>% 
-  rename(`Mean Depression Score` = mdd_total,
-         `Mean Sleep Quality Score` = sq_total,
-         `Mean Quality of Life Score` = ql_total)
+  rename(`Depression` = mdd_total,
+         `Sleep Quality` = sq_total,
+         `Quality of Life` = ql_total)
 
 corr <- cor(data_corr)
 

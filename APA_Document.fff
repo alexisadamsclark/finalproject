@@ -9,20 +9,6 @@
 \ifnextchar[{\eatarg}{}
 
 \centering
-\includegraphics{APA_Document_files/figure-latex/Plot 2-1.pdf}
-\caption{}
-\end{figure*}
-\begin{figure*}[hbt]
-\ifnextchar[{\eatarg}{}
-
-\centering
-\includegraphics{APA_Document_files/figure-latex/Plot 3-1.pdf}
-\caption{}
-\end{figure*}
-\begin{figure*}[hbt]
-\ifnextchar[{\eatarg}{}
-
-\centering
 \includegraphics{APA_Document_files/figure-latex/Figure 5-1.pdf}
 \caption{}
 \end{figure*}
