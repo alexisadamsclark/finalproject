@@ -172,6 +172,33 @@ apa_table(scorebyses,
 
 ```
 
+```{r Plot 1, echo = FALSE}
+ggplot(scorebyses, aes(x = SES, y = `Mean Depression Score`, fill = SES)) + 
+  geom_col(alpha = 0.7, width = 0.5) + 
+  labs(title = "Mean Depression Score by Socioeconomic Status", 
+       y = "Depression Total Score", 
+       x = "Socioeconomic Status") + 
+  guides(fill=FALSE)
+```
+
+```{r Plot 2, echo = FALSE}
+ggplot(scorebyses, aes(x = SES, y = `Mean Sleep Quality Score`, fill = SES)) + 
+  geom_col(alpha = 0.7, width = 0.5) + 
+  labs(title = "Mean Sleep Quality Score by Socioeconomic Status", 
+       y = "Sleep Quality Total Score", 
+       x = "Socioeconomic Status") + 
+       guides(fill=FALSE)
+```
+
+```{r Plot 3, echo = FALSE}
+ggplot(scorebyses, aes(x = SES, y = `Mean Quality of Life Score`, fill = SES)) + 
+  geom_col(alpha = 0.7, width = 0.5) + 
+  labs(title = "Mean Quality of Life Score by Socioeconomic Status", 
+       y = "Quality of Life Total Score", 
+       x = "Socioeconomic Status") + 
+       guides(fill=FALSE)
+```
+
 
 # Discussion
 
