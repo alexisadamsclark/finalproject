@@ -19,7 +19,7 @@ affiliation:
 
 authornote: |
 
-  We would like to acknowledge Daniel Anderson for introducing us to Papaja and our classmates in Introduction to Data Science with R.
+  We would like to acknowledge Daniel Anderson for introducing us to Papaja and thank our classmates in Introduction to Data Science with R.
 
 abstract: |
   One or two sentences providing a **basic introduction** to the field,  comprehensible to a scientist in any discipline.
