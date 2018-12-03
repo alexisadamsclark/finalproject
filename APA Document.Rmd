@@ -70,7 +70,7 @@ knitr::opts_chunk$set(cache.extra = knitr::rand_seed)
 # Methods
 
 ## Participants
-Participants were recruited through the University of Oregon Human Subjects Pool consisting of undergraduate students enrolled in introductory psychology and linguistics courses. Students received academic credit in exchange for their participants. Participants were not aware of the subject of the study before scheduling their participation, so participants did not self-select into the study. Although they could leave the study after reading informed consent, no participants chose to do so. The University’s Office of Research Compliance (Institutional Review Board) approved this study. 
+Participants were recruited through the University of Oregon Human Subjects Pool consisting of undergraduate students enrolled in introductory psychology and linguistics courses. Students received academic credit in exchange for their participants. Participants were not aware of the subject of the study before scheduling their participation, so participants did not self-select into the study. Although they could leave the study after reading informed consent, no participants chose to do so. 
 
 In total, [#] participants were included in this study, all of who had complete data. [insert demographic characteristics]
 
@@ -92,7 +92,8 @@ Participants were also asked to complete a demongraphics quationnaire, which ask
 
 ## Procedure
 
-[need to insert]
+An online version of this study was created through Qualtrics survey software, and the
+survey link was distributed to participants on the via SONA software through the University of Oregon Human Subjects pool. After clicking the survey link, participants were informed of study procedures and content through an informed consent process. After completing the study, participants received academic credit as compensation and were presented with debriefing materials. The University of Oregon's s Office of Research Compliance (Institutional Review Board) approved this study. 
 
 ## Data analysis
 We used `r cite_r("r-references.bib")` for all our analyses. The authors interpreted our correlational results as small (.10-.29), medium (.30-.49), and large correlations (.50-1.00).
