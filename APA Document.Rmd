@@ -76,11 +76,16 @@ In total, [#] participants were included in this study, all of who had complete 
 
 ## Material
 
-###Depression Scale
+###Depressive Symptoms Scale
+
+A scale to measure depressive symptoms was created by the researchers for the purposes of this study. Participants were instructed to rate each item on Likert-type scale, where 1 corresponds to “strongly disagree,” and 5 corresponds to “strongly agree.” The scale consisted of three items, including: “Over the last 2 weeks, I have felt little interest or pleasure in doing things;” “Over the last 2 weeks, I have felt down, depressed, or hopeless;” and “Over the last 2 weeks, I have felt tired or had little energy.” Scale items were summed to create a depression score, where higher scores represent higher depressive symptoms.
 
 ###Quality of Life Scale
+A scale to measure participants’ quality of life was created by the researchers. Participants were instructed to rate each item on Likert-type scale, where 1 corresponds to “strongly disagree,” and 5 corresponds to “strongly agree.” The scale consisted of four items, including: “My life is ideal;” “I am satisfied with my life;” “So far I have been able get the important things I want from life;” and “I have accomplished many of the things in my life.” Scale items were summed to create a total quality of life score, where higher scores represent better quality of life.
 
 ###Sleep Quality Scale
+A scale to measure participants’ sleep quality was created by the researchers. Participants were instructed to rate each item on Likert-type scale, where 1 corresponds to “strongly disagree,” and 5 corresponds to “strongly agree.” The scale consisted of three items, including: “I am satisfied with the time I spend sleeping;” “I am satisfied with my quality of sleep”; and “When I wake up, I feel refreshed.” Scale items were summed to create a total sleep quality score, where higher scores represent better sleep quality. 
+
 
 ###Demographics Questionnaire
 
