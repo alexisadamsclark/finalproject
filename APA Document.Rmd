@@ -174,45 +174,47 @@ apa_table(scorebyses,
 
 ```{r Plot 1, echo = FALSE}
 
-ggplot(scorebyses, aes(x = SES, y = `Mean Depression Score`, fill = SES)) + 
+pp1 <- ggplot(scorebyses, aes(x = SES, y = `Mean Depression Score`, fill = SES)) + 
   geom_col(alpha = 0.7, width = 0.5) + 
-  labs(title = "Mean Depression Score by Socioeconomic Status", 
-       y = "Depression Total Score", 
+  labs(y = "Depression", 
        x = "Socioeconomic Status") + 
        guides(fill=FALSE)
-```
 
-```{r Plot 2, echo = FALSE}
-
-ggplot(scorebyses, aes(x = SES, y = `Mean Sleep Quality Score`, fill = SES)) + 
+pp2 <- ggplot(scorebyses, aes(x = SES, y = `Mean Sleep Quality Score`, fill = SES)) + 
   geom_col(alpha = 0.7, width = 0.5) + 
-  labs(title = "Mean Sleep Quality Score by Socioeconomic Status", 
-       y = "Sleep Quality Total Score", 
+  labs(y = "Sleep Quality", 
        x = "Socioeconomic Status") + 
        guides(fill=FALSE)
-```
 
-
-```{r Plot 3, echo = FALSE}
-
-ggplot(scorebyses, aes(x = SES, y = `Mean Quality of Life Score`, fill = SES)) + 
+pp3 <- ggplot(scorebyses, aes(x = SES, y = `Mean Quality of Life Score`, fill = SES)) + 
   geom_col(alpha = 0.7, width = 0.5) + 
-  labs(title = "Mean Quality of Life Score by Socioeconomic Status", 
-       y = "Quality of Life Total Score", 
+  labs( y = "Quality of Life", 
        x = "Socioeconomic Status") + 
        guides(fill=FALSE)
+
+sp_grid <- grid.arrange(pp1, pp2, pp3, 
+                        ncol = 1,
+                        top = "Mean Depression, Sleep Quality, and Quality of Life Scores by Socioeconomic Status")
 ```
 
 ##Descriptive Statistics
-The mean depression total score for the sample is `r round(mean(data$mdd_total), 2)` . The mean sleep quality total score for the sample is `r round(mean(data$sq_total), 2)`. The mean quality of life total score for the sample is `r round(mean(data$ql_total), 2)`. Mean total scores separated by socioeconomic status are listed in Table 1 and graphically displayed in Figures 1-3. 
+The mean depression total score for the sample is `r round(mean(data$mdd_total), 2)` . The mean sleep quality total score for the sample is `r round(mean(data$sq_total), 2)`. The mean quality of life total score for the sample is `r round(mean(data$ql_total), 2)`. Mean total scores separated by socioeconomic status are listed in Table 1 and graphically displayed in Figure 1. 
 
 ##Correlation Results
-Depressive symptoms, sleep quality, and quality of life scores were significantly correlated with each other, *p* < .05 (see Table 2).
+Depressive symptoms, sleep quality, and quality of life scores were significantly correlated with each other, *p* < .05 (see Table 2). 
+
+##Exploratory Analyses in Low SES Individuals
+The relationships between these depressive symptoms, sleep quality, and quality of life scores in low SES individuals are displayed in Figure 2. 
 
 ```{r correlations, include = FALSE}
 #Correlations between the three outome variables
 data_corr <- data %>% 
   select(ends_with("total"))
+data_corr <- data_corr%>% 
+  rename(`Mean Depression Score` = mdd_total,
+         `Mean Sleep Quality Score` = sq_total,
+         `Mean Quality of Life Score` = ql_total)
+
 corr <- cor(data_corr)
 
 library(Hmisc)
@@ -230,13 +232,48 @@ flattenCorrMatrix <- function(cormat, pmat) {
 r <- rcorr(as.matrix(data_corr))
 r2 <- flattenCorrMatrix(r$r, r$P)
 
+data_p <- data %>%  
+                select(id, ses, en, sq_total, mdd_total, ql_total) %>% 
+                filter(ses == "LowSES")
 ```
 
 ```{r correlations table, results = "asis"}
 apa_table(r2, caption = "Correlations between Depression, Sleep Quality, and Quality of Life Scores.",  
-          note = "This table was created with apa_table()",
-          align = "c")
+          note = "This table was created with apa_table()")
 ```
+```{r Figure 5}
+opts_chunk$set(fig.width = 5, fig.height = 10)
+
+#Scatterplot of sleep quality vs. depression
+sp1 <- ggplot(data_p, aes(x = sq_total, y = mdd_total)) + 
+              geom_point(position = position_jitter(w = 0.1, h = 0), alpha = 0.7) + 
+              geom_smooth(method = "lm") +
+              labs(x = "Sleep Quality", 
+                   y = "Depression")
+
+#Scatterplot of quality of life vs. depression
+sp2 <- ggplot(data_p, aes(x = sq_total, y = ql_total)) + 
+              geom_point(position = position_jitter(w = 0.1, h = 0), alpha = 0.7) + 
+              geom_smooth(method = "lm") +
+              labs(x = "Sleep Quality", 
+                   y = "Quality of Life")
+
+#Scatterplot of quality of life vs. depression
+sp3 <- ggplot(data_p, aes(x = ql_total, y = mdd_total)) + 
+              geom_point(position = position_jitter(w = 0.1, h = 0), alpha = 0.7) + 
+              geom_smooth(method = "lm") +
+              labs(x = "Quality of Life", 
+                   y = "Depression")
+
+#Facet wrap three plots
+sp_grid <- grid.arrange(sp1, sp2, sp3, 
+                        ncol = 1,
+                        top = "The Association between Study Measures in Low SES Individuals")
+
+```
+
+
+
 
 # Discussion
 
