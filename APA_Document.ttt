@@ -20,3 +20,25 @@ Med & 7.25 & 13.86 & 9.94\\
 \end{threeparttable}
 \end{center}
 \end{table*}
+\begin{table*}[hbt]
+\ifnextchar[{\eatarg}{}
+[tbp]
+\begin{center}
+\begin{threeparttable}
+\caption{\label{tab:correlations table}Correlations between Depression, Sleep Quality, and Quality of Life Scores.}
+\begin{tabular}{cccc}
+\toprule
+row & \multicolumn{1}{c}{column} & \multicolumn{1}{c}{cor} & \multicolumn{1}{c}{p}\\
+\midrule
+sq\_total & mdd\_total & -0.19 & 0.00\\
+sq\_total & ql\_total & -0.11 & 0.06\\
+mdd\_total & ql\_total & -0.17 & 0.00\\
+\bottomrule
+\addlinespace
+\end{tabular}
+\begin{tablenotes}[para]
+\normalsize{\textit{Note.} This table was created with apa\_table()}
+\end{tablenotes}
+\end{threeparttable}
+\end{center}
+\end{table*}
