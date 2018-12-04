@@ -22,7 +22,7 @@ authornote: |
   We would like to acknowledge Daniel Anderson for introducing us to `papaja` and thank our classmates in Introduction to Data Science with R.
 
 abstract: |
-  Depression is a widespread and debilitating mental illness. However, sleep quality is a potent and modifiable protective factor that may reduce depressive symptoms and increase quality of life. In this study, we examined the associations among depressive symptoms, sleep quality, and quality of life in a high risk sample. First, we assessed if there are differences in depressive symptoms, sleep quality, and quality of life according to socioeconomic status. Using correlational analyses, we found depressive symptoms were negatively correlated with quality of life and sleep quality. Meanwhile, sleep quality was positively correlated with quality of life. The results indicate that intricate and strong associations exist among depressive symptoms, sleep quality, and quality of life. Clinical implications of these findings are also discussed. 
+  Depression is a widespread and debilitating mental illness. However, sleep quality is a potent and modifiable protective factor that may reduce depressive symptoms and increase quality of life. In this study, we examined the associations among depressive symptoms, sleep quality, and quality of life in a high risk sample. We looked for differences in depressive symptoms, sleep quality, and quality of life according to socioeconomic status. Using correlational analyses, we found depressive symptoms were negatively correlated with quality of life and sleep quality. Meanwhile, sleep quality was positively correlated with quality of life. The results indicate that intricate and strong associations exist among depressive symptoms, sleep quality, and quality of life. Clinical implications of these findings are also discussed. 
   
   <!-- https://tinyurl.com/ybremelq -->
   
@@ -201,13 +201,13 @@ plot_grid(title, pp1, pp2, pp3, ncol = 1, rel_heights = c(0.3, 1, 1, 1))
 ```
 
 ##Descriptive Statistics
-The mean depression total score for the sample is `r round(mean(data$mdd_total), 2)` . The mean sleep quality total score for the sample is `r round(mean(data$sq_total), 2)`. The mean quality of life total score for the sample is `r round(mean(data$ql_total), 2)`. Mean total scores separated by socioeconomic status are listed in Table 1 and graphically displayed in Figure 1. 
+The mean depression total score for the sample is `r round(mean(data$mdd_total), 2)` . The mean sleep quality total score for the sample is `r round(mean(data$sq_total), 2)`. The mean quality of life total score for the sample is `r round(mean(data$ql_total), 2)`. Mean total scores separated specifically by socioeconomic status are listed in Table 1 and graphically displayed in Figure 1. 
 
 ##Correlation Results
-Depressive symptoms, sleep quality, and quality of life scores were significantly correlated with each other, *p* < .05 (see Table 2). 
+Depressive symptoms were significantly negatively correlated with both sleep quality, *r* = -.20, *p* < .01, and quality of life, *r* = -.55, *p* < .01. Sleep quality and quality of life were significantly positively correlated, *r* = .22, *p* < .01. (see Table 2)
 
 ##Exploratory Analyses in Low SES Individuals
-In order to look at these relationships specifically in Low SES individuals, we plotted the correlations between depressive symptoms, sleep quality, and quality of life in only low SES individuals (see Figure 2). To look sepcifically at the differences in scores on each depressive symptom, we subtracted the scores of low SES individuals from high SES individuals and plotted the differences (see Figure 3)
+In order to look at these relationships specifically in low SES individuals, we plotted the correlations between depressive symptoms, sleep quality, and quality of life in only low SES individuals (see Figure 2). To look sepcifically at the differences in scores on each depressive symptom, we subtracted the scores of low SES individuals from high SES individuals and plotted the differences (see Figure 3).
 
 ```{r correlations, include = FALSE}
 #Correlations between the three outome variables
@@ -259,14 +259,14 @@ sp1 <- ggplot(data_p, aes(x = sq_total, y = mdd_total)) +
 #Scatterplot of quality of life vs. depression
 sp2 <- ggplot(data_p, aes(x = sq_total, y = ql_total)) + 
               geom_point(position = position_jitter(w = 0.1, h = 0), alpha = 0.7) + 
-              geom_smooth(method = "lm") +
+              geom_smooth(method = "lm", color = "purple4") +
               labs(x = "Sleep Quality", 
                    y = "Quality of Life")
 
 #Scatterplot of quality of life vs. depression
 sp3 <- ggplot(data_p, aes(x = ql_total, y = mdd_total)) + 
               geom_point(position = position_jitter(w = 0.1, h = 0), alpha = 0.7) + 
-              geom_smooth(method = "lm") +
+              geom_smooth(method = "lm", color = "darkgreen") +
               labs(x = "Quality of Life", 
                    y = "Depression")
 ```
