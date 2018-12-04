@@ -104,7 +104,6 @@ library(knitr)
 library(janitor)
 library(forcats)
 library(Hmisc)
-library(kableExtra)
 library(cowplot)
 theme_set(theme_minimal())
 
