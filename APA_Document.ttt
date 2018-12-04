@@ -8,9 +8,9 @@
 \toprule
 SES & \multicolumn{1}{c}{Mean Depression Score} & \multicolumn{1}{c}{Mean Sleep Quality Score} & \multicolumn{1}{c}{Mean Quality of Life Score}\\
 \midrule
-High & 7.30 & 12.52 & 9.89\\
-Low & 7.38 & 13.41 & 10.02\\
-Med & 7.25 & 13.86 & 9.94\\
+High & 7.37 & 9.94 & 7.74\\
+Low & 7.34 & 10.03 & 7.66\\
+Med & 7.72 & 9.86 & 7.45\\
 \bottomrule
 \addlinespace
 \end{tabular}
@@ -30,9 +30,9 @@ Med & 7.25 & 13.86 & 9.94\\
 \toprule
 row & \multicolumn{1}{c}{column} & \multicolumn{1}{c}{cor} & \multicolumn{1}{c}{p}\\
 \midrule
-Mean Sleep Quality Score & Mean Depression Score & -0.19 & 0.00\\
-Mean Sleep Quality Score & Mean Quality of Life Score & -0.11 & 0.06\\
-Mean Depression Score & Mean Quality of Life Score & -0.17 & 0.00\\
+Sleep Quality & Depression & -0.20 & 0.00\\
+Sleep Quality & Quality of Life & 0.22 & 0.00\\
+Depression & Quality of Life & -0.55 & 0.00\\
 \bottomrule
 \addlinespace
 \end{tabular}
