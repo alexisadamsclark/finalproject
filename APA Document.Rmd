@@ -5,7 +5,7 @@ shorttitle        : "Final Project"
 author: 
   - name          : "Alexis Adams-Clark"
     affiliation   : "1"
-    corresponding : yes    # Define only one corresponding author
+    corresponding : yes
     address       : "1585 E 13th Ave, Straub 339, Eugene, OR 97403"
     email         : "aadamscl@uoregon.edu"
   - name          : "Andrew Fridman"
@@ -27,7 +27,6 @@ abstract: |
   <!-- https://tinyurl.com/ybremelq -->
   
 keywords          : "sleep, depression, quality of life, SES"
-wordcount         : "X"
 
 bibliography      : ["r-references.bib"]
 
@@ -307,18 +306,22 @@ data_tp$Item <- as.factor(data_tp$Item)
 ```{r Figure 3 }
 #Scatterplot of tidy data
 ggplot(data_tp, aes(x = Item, y = DiffSES)) + 
-  geom_col(alpha = 0.7, aes(fill = Item)) + 
+  geom_col(alpha = 0.7, width = 0.7, aes(fill = Item)) + 
   labs(title = "Low-to-High SES Difference in MDD scores",
        x = "Item", 
        y = "Difference")
 ```
 
 # Discussion
-  Our results confirmed that more depression symptoms were correlated with lower life quality and sleep quality. Whereas sleep quality was positively associated with life quality. The results were consistent with past literature and our hypothesis. 
-  Based on the symptoms from major depressive disorder diagnosis, a patient suffering from depression is likely to experience either hypersomnia or insomnia. Insomnia is most related to low sleep quality. Meanwhile, hypersomnia does not guarantee high sleep quality as much too long duration of sleep may cause dizziness and lethargy in the patients. In reverse, frequent sleep disturbances and the discomfort and stress that come with low sleep quality may negatively impact a patient's everyday mood and reduce the general energy level to engage in more mood-boosting activities. These bidirectional influences may explain the negative correlation between depression and sleep quality that we detected with our sample. 
-  As sleep is an instrumental component in everyday life, lower sleep quality will inevitably decrease life quality. Higher life quality may consist of more comfortable sleeping environment and less sleep-hindering stress. These potential connections help elucidate the positive association between sleep quality and life quality. 
-  Limitations of our study lie in our correlational study design such that we were unable to examine causal relationship among the variables. We also relied on self-report measures which may be susceptible to reporter bias. Possible bias in this high risk sample include underreport depression symptoms due to low insight or emotional numbness, as well as overreporting symptoms due to Hawthorne effect or other motivations. In studies to follow, we will also adopt structured clinical interview and objective measures of the key variables. We will incorporate sleep intervention (e.g., insomnia cognitive behavior therapy) to manipulate the sleep quality level to examine causal relationship between depression symptoms and sleep quality. An active and a waitlist control groups will be recruited to rule out more confounds. More sophisticated statistical analyses such as multilevel modeling may be adopted.
-  Clinical implications from the results may inform clinicians and the general public to pay more attention to sleep quality with an aim of keeping depression at bay or reducing depressive symptoms. In general, our study with a high risk sample demonstrated the intricate associations among depressive symptoms, sleep and life quality.
+Our results suggest that more frequent depressive symptoms were correlated with lower quality of life and lower sleep quality. Furthermore, sleep quality was positively associated with life quality. The results were consistent with past literature and our hypotheses. We also explored group differences in despressive symptoms, sleep quality, and quality of life specifically for individuals with low socioeconomic status. Descriptive analyses did not reveal any apprarent differences between these three outcomes according to socioeconomic status.
+
+Based on the symptoms from major depressive disorder diagnosis, a patient suffering from depression is likely to experience either hypersomnia or insomnia. Insomnia is most related to low sleep quality. Meanwhile, hypersomnia does not guarantee high sleep quality as much too long duration of sleep may cause dizziness and lethargy in the patients. In reverse, frequent sleep disturbances and the discomfort and stress that come with low sleep quality may negatively impact a patient's everyday mood and reduce the general energy level to engage in more mood-boosting activities. These bidirectional influences may explain the negative correlation between depression and sleep quality that we detected with our sample. 
+
+As sleep is an instrumental component in everyday life, lower sleep quality will inevitably decrease life quality. Higher life quality may consist of more comfortable sleeping environment and less sleep-hindering stress. These potential connections help elucidate the positive association between sleep quality and life quality. 
+
+Limitations of our study lie in our correlational study design such that we were unable to examine causal relationship among the variables. We also relied on self-report measures that may be susceptible to reporter bias. Possible bias in this high risk sample include underreport depression symptoms due to low insight or emotional numbness, as well as overreporting symptoms due to Hawthorne effect or other motivations. In studies to follow, we will also adopt structured clinical interviews and objective measures of the key variables. We will incorporate sleep interventions (e.g., insomnia cognitive behavior therapy) to manipulate the sleep quality level to examine causal relationship between depression symptoms and sleep quality. An active and a waitlist control group will be recruited to rule out more confounds. More sophisticated statistical analyses such as multilevel modeling may be adopted.
+
+Clinical implications of the results may inform clinicians and the general public to pay more attention to sleep quality with an aim of keeping depression at bay or reducing depressive symptoms. In general, our study with a high risk sample demonstrated the intricate associations among depressive symptoms, sleep quality, and quality of life.
 
 \newpage
 
