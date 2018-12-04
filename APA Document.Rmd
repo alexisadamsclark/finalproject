@@ -66,36 +66,36 @@ While this global measure may capture the negative impact of poor sleep quality 
 
 In this present study, we set out to evaluate evidence for the association between sleep quality, depression, and quality of life in a sample of diverse sample of adults. These relationships will also be investigated in the context of low, medium, and high SES as a moderator. Given the importance of sleep quality and mental health on long-term health outcomes, we hope to enrich the current literature with a better understanding of these complex factors. Findings from this study will inform models of psychopathology and provide a foundation from which causal and longitudinal intervention-focused research can be constructed.
 
-# Methods\footnote{This is a fictional Methods section, as we simulated our data. However, this is a realistic way that we could go about collecting this information in the future}
+# Methods\footnote{This is a fictional Methods section, as we simulated our data. However, this is a realistic way that we could go about collecting this data in the future}
 
 ## Participants
-Participants were recruited through the University of Oregon Human Subjects Pool consisting of undergraduate students enrolled in introductory psychology and linguistics courses. Students received academic credit in exchange for their participants. Participants were not aware of the subject of the study before scheduling their participation, so participants did not self-select into the study. Although they could leave the study after reading informed consent, no participants chose to do so. 
+Participants were recruited through Amazon Mechanical Turk (MTurk). MTurk is a survey tool offered through Amazon.com, where people around the world can complete surveys for monetary compensation. MTurk is commonly used in social science research studies, and it has been found to be representative.
 
-In total, [#] participants were included in this study, all of who had complete data. [i need to insert demographic characteristics]
+In total, 500 participants were included in this study, all of whom had complete data. Out of 500 participants, 194 as "low" SES, 244 identified "middle" SES, and 62 identified as "high" SES. Out of 500 participants, 64 had not graduated, 157 completed high school, 96 had a postsecondary certificate, and 183 had some postsecondary education. Additionally, 344 identified as European-American, 51 identified as African American, 51 identified as Hispanic, 27 identified as Asian-American, 15 identified as American Indian/Alaskan Native, 11 identified as Pacific Islander, and 1 identified as "other."
 
 ## Materials
 
 ###Depressive Symptoms Scale
 
-A scale to measure depressive symptoms was created by the researchers for the purposes of this study. Participants were instructed to rate each item on Likert-type scale, where 1 corresponds to “strongly disagree,” and 5 corresponds to “strongly agree.” 0 indicates "unsure of the answer". The scale consisted of three items, including: “Over the last 2 weeks, I have felt little interest or pleasure in doing things;” “Over the last 2 weeks, I have felt down, depressed, or hopeless;” and “Over the last 2 weeks, I have felt tired or had little energy.” Scale items were summed to create a depression score, where higher scores represent higher depressive symptoms.
+A scale to measure depressive symptoms was created by the researchers for the purposes of this study. Participants were instructed to rate each item on Likert-type scale, where 1 corresponds to “strongly disagree,” 5 corresponds to “strongly agree." The scale consisted of three items, including: “Over the last 2 weeks, I have felt little interest or pleasure in doing things;” “Over the last 2 weeks, I have felt down, depressed, or hopeless;” and “Over the last 2 weeks, I have felt tired or had little energy.” Scale items were summed to create a depression score, where higher scores represent higher depressive symptoms.
 
 ###Quality of Life Scale
-A scale to measure participants’ quality of life was created by the researchers. Participants were instructed to rate each item on Likert-type scale, where 1 corresponds to “strongly disagree,” and 5 corresponds to “strongly agree.” 0 indicates "unsure of the answer". The scale consisted of four items, including: “My life is ideal;” “I am satisfied with my life;” “So far I have been able get the important things I want from life;” and “I have accomplished many of the things in my life.” Scale items were summed to create a total quality of life score, where higher scores represent better quality of life.
+A scale to measure participants’ quality of life was created by the researchers. Participants were instructed to rate each item on Likert-type scale, where 1 corresponds to “strongly disagree,” and 5 corresponds to “strongly agree.” The scale consisted of four items, including: “My life is ideal;” “I am satisfied with my life;” “So far I have been able get the important things I want from life;” and “I have accomplished many of the things in my life.” Scale items were summed to create a total quality of life score, where higher scores represent better quality of life.
 
 ###Sleep Quality Scale
-A scale to measure participants’ sleep quality was created by the researchers. Participants were instructed to rate each item on Likert-type scale, where 1 corresponds to “strongly disagree,” and 5 corresponds to “strongly agree.” 0 indicates "unsure of the answer". The scale consisted of three items, including: “I am satisfied with the time I spend sleeping;” “I am satisfied with my quality of sleep”; and “When I wake up, I feel refreshed.” Scale items were summed to create a total sleep quality score, where higher scores represent better sleep quality. 
+A scale to measure participants’ sleep quality was created by the researchers. Participants were instructed to rate each item on Likert-type scale, where 1 corresponds to “strongly disagree,” and 5 corresponds to “strongly agree.” The scale consisted of three items, including: “I am satisfied with the time I spend sleeping;” “I am satisfied with my quality of sleep”; and “When I wake up, I feel refreshed.” Scale items were summed to create a total sleep quality score, where higher scores represent better sleep quality. 
 
 
 ###Demographics Questionnaire
-Participants were also asked to complete a demongraphics quationnaire, which asked about their socioeconomic status, race/ethnicity, and educational background. 
+Participants were also asked to complete a demongraphics questionnaire, which asked about their socioeconomic status, race/ethnicity, and educational background. 
 
 ## Procedure
 
 An online version of this study was created through Qualtrics survey software, and the
-survey link was distributed to participants on the via SONA software through the University of Oregon Human Subjects pool. After clicking the survey link, participants were informed of study procedures and content through an informed consent process. After completing the study, participants received academic credit as compensation and were presented with debriefing materials. The University of Oregon's s Office of Research Compliance (Institutional Review Board) approved this study. 
+survey link was distributed to participants on the via Amazon Mechanical Turk. The study was advertised as "a study of sleep and well-being." After clicking the survey link, participants were informed of study procedures and content through an informed consent process. After completing the study, participants received academic credit as compensation and were presented with debriefing materials. The University of Oregon's s Office of Research Compliance (Institutional Review Board) approved this study. 
 
 ## Data analysis
-We used `r cite_r("r-references.bib")` for all our analyses. We calculated means and standard deviations for each of the total scale scores. We also calculated Pearson's r correlation coefficients between depressive symptoms, quality of life, and sleep quality total scores. The authors interpreted our correlational results as small (.10-.29), medium (.30-.49), and large correlations (.50-1.00).
+We used `r cite_r("r-references.bib")` for all our analyses. We calculated means and standard deviations for each of the total scale scores, and we separated means by socioeconomic status. We also calculated Pearson's r correlation coefficients between depressive symptoms, quality of life, and sleep quality total scores. The authors interpreted our correlational results as small (.10-.29), medium (.30-.49), and large correlations (.50-1.00).
 
 
 # Results

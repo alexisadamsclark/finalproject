@@ -22,7 +22,7 @@ theme_set(theme_minimal())
 #Import data
 list(here())
 data <- import(here("Data", "Final_project_simulated_data.csv"))
-#View(data)
+View(data)
 ```
 
 #  Data Tables and Visualizations
@@ -51,6 +51,16 @@ data <- data %>%
          mdd_total = mdd1 + mdd2 + mdd3,
          ql_total = ql1 + ql2 + ql3)
 
+#Demongraphic info
+data %>% 
+  count(ses) 
+
+data %>% 
+  count(ed) 
+
+data %>% 
+  count(en)
+
 #Grouping by ses and creating a summary of Depression (mdd), Sleep Quality (sq), and Quality of Life (ql) total scores
 scorebyses <- data %>% 
   group_by(ses) %>% 
@@ -69,6 +79,8 @@ scorebyses$ses <- factor(scorebyses$ses, levels = c("Low", "Med", "High"))
 
 #Table summary of scores by ses
 kable(scorebyses, format = "html", digits = round(2))
+
+
 ```
 
 ```{r data visualization 1}
