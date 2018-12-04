@@ -159,12 +159,14 @@ data_t <- data %>%
                 group_by(ses, Measure, Item) %>% 
                 summarise(Value_mean = mean(Value)) %>% 
                 spread(key = ses, value = Value_mean) %>% 
-                mutate(DiffSES = LowSES - HighSES) %>% 
+                mutate(DiffSES = LowSES - HighSES)
+
+data_ts <- data_t %>% 
                 select(Measure, Item, DiffSES) %>% 
                 spread(key = Measure, value = Item) %>% 
                 arrange(mdd, ql, sq)
-View(data_t)
-kable(data_t)
+#View(data_ts)
+kable(data_ts)
 ```
 
 ```{r Plot tidy data}
