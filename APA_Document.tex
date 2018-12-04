@@ -1,4 +1,4 @@
-\documentclass[man]{apa6}
+\documentclass[man, noextraspace]{apa6}
 \usepackage{lmodern}
 \usepackage{amssymb,amsmath}
 \usepackage{ifxetex,ifluatex}
@@ -100,6 +100,8 @@ Fridman\textsuperscript{1}, \& Xi Yang\textsuperscript{1}}
 \makeatletter
 \renewcommand{\efloat@iwrite}[1]{\immediate\expandafter\protected@write\csname efloat@post#1\endcsname{}}
 \makeatother
+\raggedbottom
+\setlength{\parskip}{0pt}
 
 \authornote{ We would like to acknowledge Daniel Anderson for
 introducing us to Papaja and thank our classmates in Introduction to
@@ -152,11 +154,11 @@ percentage of time spent sleeping while laying in bed. Whereas, total
 sleep time is the amount of time spent sleeping, accounting for factors
 such as sleep onset latency and awakenings. There is a multitude of
 studies that evidence poor sleep as a prospective risk factor in
-premature mortality. More specifically, chronically disrupted and
-limited sleep has been linked to increased rates of obesity, diabetes,
-cardiovascular disease, cognitive impairment, and mental health
-disorders (Knutson, Spiegel, Penev, \& Van Cauter, 2007); (Gangwisch,
-Malaspina, Boden-Albala, \& Heymsfield, 2005).
+premature mortality (Knutson, Spiegel, Penev, \& Van Cauter, 2007). More
+specifically, chronically disrupted and limited sleep has been linked to
+increased rates of obesity, diabetes, cardiovascular disease, cognitive
+impairment, and mental health disorders (Gangwisch, Malaspina,
+Boden-Albala, \& Heymsfield, 2005).
 
 Additionally, recent epidemiological research suggests that sleep has
 continued to decrease over the past 30 years, which is consistent with
@@ -200,21 +202,26 @@ inform models of psychopathology and provide a foundation from which
 causal and longitudinal intervention-focused research can be
 constructed.
 
-\section{\texorpdfstring{Methods\footnote{This is a fictional Methods section, as we simulated our data. However, this is a realistic way that we could go about collecting this information in the future}}{Methods}}\label{methods}
+\section{\texorpdfstring{Methods\footnote{This is a fictional Methods section, as we simulated our data. However, this is a realistic way that we could go about collecting this data in the future}}{Methods}}\label{methods}
 
 \subsection{Participants}\label{participants}
 
-Participants were recruited through the University of Oregon Human
-Subjects Pool consisting of undergraduate students enrolled in
-introductory psychology and linguistics courses. Students received
-academic credit in exchange for their participants. Participants were
-not aware of the subject of the study before scheduling their
-participation, so participants did not self-select into the study.
-Although they could leave the study after reading informed consent, no
-participants chose to do so.
+Participants were recruited through Amazon Mechanical Turk (MTurk).
+MTurk is a survey tool offered through Amazon.com, where people around
+the world can complete surveys for monetary compensation. MTurk is
+commonly used in social science research studies, and it has been found
+to be representative.
 
-In total, {[}\#{]} participants were included in this study, all of who
-had complete data. {[}i need to insert demographic characteristics{]}
+In total, 500 participants were included in this study, all of whom had
+complete data. Out of 500 participants, 194 as \enquote{low} SES, 244
+identified \enquote{middle} SES, and 62 identified as \enquote{high}
+SES. Out of 500 participants, 64 had not graduated, 157 completed high
+school, 96 had a postsecondary certificate, and 183 had some
+postsecondary education. Additionally, 344 identified as
+European-American, 51 identified as African American, 51 identified as
+Hispanic, 27 identified as Asian-American, 15 identified as American
+Indian/Alaskan Native, 11 identified as Pacific Islander, and 1
+identified as \enquote{other.}
 
 \subsection{Materials}\label{materials}
 
@@ -224,44 +231,43 @@ Scale}\label{depressive-symptoms-scale}
 A scale to measure depressive symptoms was created by the researchers
 for the purposes of this study. Participants were instructed to rate
 each item on Likert-type scale, where 1 corresponds to \enquote{strongly
-disagree,} and 5 corresponds to \enquote{strongly agree.} 0 indicates
-\enquote{unsure of the answer}. The scale consisted of three items,
-including: \enquote{Over the last 2 weeks, I have felt little interest
-or pleasure in doing things;} \enquote{Over the last 2 weeks, I have
-felt down, depressed, or hopeless;} and \enquote{Over the last 2 weeks,
-I have felt tired or had little energy.} Scale items were summed to
-create a depression score, where higher scores represent higher
-depressive symptoms.
+disagree,} 5 corresponds to \enquote{strongly agree.} The scale
+consisted of three items, including: \enquote{Over the last 2 weeks, I
+have felt little interest or pleasure in doing things;} \enquote{Over
+the last 2 weeks, I have felt down, depressed, or hopeless;} and
+\enquote{Over the last 2 weeks, I have felt tired or had little energy.}
+Scale items were summed to create a depression score, where higher
+scores represent higher depressive symptoms.
 
 \subsubsection{Quality of Life Scale}\label{quality-of-life-scale}
 
 A scale to measure participants' quality of life was created by the
 researchers. Participants were instructed to rate each item on
 Likert-type scale, where 1 corresponds to \enquote{strongly disagree,}
-and 5 corresponds to \enquote{strongly agree.} 0 indicates
-\enquote{unsure of the answer}. The scale consisted of four items,
-including: \enquote{My life is ideal;} \enquote{I am satisfied with my
-life;} \enquote{So far I have been able get the important things I want
-from life;} and \enquote{I have accomplished many of the things in my
-life.} Scale items were summed to create a total quality of life score,
-where higher scores represent better quality of life.
+and 5 corresponds to \enquote{strongly agree.} The scale consisted of
+four items, including: \enquote{My life is ideal;} \enquote{I am
+satisfied with my life;} \enquote{So far I have been able get the
+important things I want from life;} and \enquote{I have accomplished
+many of the things in my life.} Scale items were summed to create a
+total quality of life score, where higher scores represent better
+quality of life.
 
 \subsubsection{Sleep Quality Scale}\label{sleep-quality-scale}
 
 A scale to measure participants' sleep quality was created by the
 researchers. Participants were instructed to rate each item on
 Likert-type scale, where 1 corresponds to \enquote{strongly disagree,}
-and 5 corresponds to \enquote{strongly agree.} 0 indicates
-\enquote{unsure of the answer}. The scale consisted of three items,
-including: \enquote{I am satisfied with the time I spend sleeping;}
-\enquote{I am satisfied with my quality of sleep}; and \enquote{When I
-wake up, I feel refreshed.} Scale items were summed to create a total
-sleep quality score, where higher scores represent better sleep quality.
+and 5 corresponds to \enquote{strongly agree.} The scale consisted of
+three items, including: \enquote{I am satisfied with the time I spend
+sleeping;} \enquote{I am satisfied with my quality of sleep}; and
+\enquote{When I wake up, I feel refreshed.} Scale items were summed to
+create a total sleep quality score, where higher scores represent better
+sleep quality.
 
 \subsubsection{Demographics
 Questionnaire}\label{demographics-questionnaire}
 
-Participants were also asked to complete a demongraphics quationnaire,
+Participants were also asked to complete a demongraphics questionnaire,
 which asked about their socioeconomic status, race/ethnicity, and
 educational background.
 
@@ -269,39 +275,41 @@ educational background.
 
 An online version of this study was created through Qualtrics survey
 software, and the survey link was distributed to participants on the via
-SONA software through the University of Oregon Human Subjects pool.
-After clicking the survey link, participants were informed of study
-procedures and content through an informed consent process. After
-completing the study, participants received academic credit as
-compensation and were presented with debriefing materials. The
+Amazon Mechanical Turk. The study was advertised as \enquote{a study of
+sleep and well-being.} After clicking the survey link, participants were
+informed of study procedures and content through an informed consent
+process. After completing the study, participants received academic
+credit as compensation and were presented with debriefing materials. The
 University of Oregon's s Office of Research Compliance (Institutional
 Review Board) approved this study.
 
 \subsection{Data analysis}\label{data-analysis}
 
-We used R (Version 3.4.2; R Core Team, 2017) and the R-packages
-\emph{bindrcpp} (Version 0.2.2; Müller, 2018), \emph{dplyr} (Version
-0.7.7; Wickham, François, Henry, \& Müller, 2018), \emph{forcats}
-(Version 0.3.0; Wickham, 2018a), \emph{Formula} (Version 1.2.2; Zeileis
-\& Croissant, 2010), \emph{ggplot2} (Version 3.0.0; Wickham, 2016),
-\emph{gridExtra} (Version 2.3; Auguie, 2017), \emph{here} (Version 0.1;
-Müller, 2017), \emph{Hmisc} (Version 4.0.3; Harrell Jr, Charles Dupont,
-\& others., 2018), \emph{janitor} (Version 1.1.1; Firke, 2018),
-\emph{kableExtra} (Version 0.9.0; Zhu, 2018), \emph{knitr} (Version
-1.20; Xie, 2015), \emph{lattice} (Version 0.20.35; Sarkar, 2008),
-\emph{papaja} (Version 0.1.0.9842; Aust \& Barth, 2018), \emph{purrr}
-(Version 0.2.5; Henry \& Wickham, 2018), \emph{readr} (Version 1.1.1;
-Wickham, Hester, \& Francois, 2017), \emph{rio} (Version 0.5.5; C.-h.
-Chan, Chan, Leeper, \& Becker, 2018), \emph{stringr} (Version 1.3.1;
-Wickham, 2018b), \emph{survival} (Version 2.41.3; Terry M. Therneau \&
-Patricia M. Grambsch, 2000), \emph{tibble} (Version 1.4.2; Müller \&
-Wickham, 2018), \emph{tidyr} (Version 0.8.1; Wickham \& Henry, 2018),
-and \emph{tidyverse} (Version 1.2.1; Wickham, 2017) for all our
-analyses. We calculated means and standard deviations for each of the
-total scale scores. We also calculated Pearson's r correlation
-coefficients between depressive symptoms, quality of life, and sleep
-quality total scores. The authors interpreted our correlational results
-as small (.10-.29), medium (.30-.49), and large correlations (.50-1.00).
+We used R (Version 3.4.3; R Core Team, 2017) and the R-packages
+\emph{\}cowplot} {[}@\}R-cowplot{]}, \emph{bindrcpp} (Version 0.2.2;
+Müller, 2018), \emph{dplyr} (Version 0.7.6; Wickham, François, Henry, \&
+Müller, 2018), \emph{forcats} (Version 0.3.0; Wickham, 2018a),
+\emph{Formula} (Version 1.2.3; Zeileis \& Croissant, 2010),
+\emph{ggplot2} (Version 3.0.0; Wickham, 2016), \emph{gridExtra} (Version
+2.3; Auguie, 2017), \emph{here} (Version 0.1; Müller, 2017),
+\emph{Hmisc} (Version 4.1.1; Harrell Jr, Charles Dupont, \& others.,
+2018), \emph{janitor} (Version 1.1.1; Firke, 2018), \emph{kableExtra}
+(Version 0.9.0; Zhu, 2018), \emph{knitr} (Version 1.20; Xie, 2015),
+\emph{lattice} (Version 0.20.35; Sarkar, 2008), \emph{papaja} (Version
+0.1.0.9842; Aust \& Barth, 2018), \emph{purrr} (Version 0.2.5; Henry \&
+Wickham, 2018), \emph{readr} (Version 1.1.1; Wickham, Hester, \&
+Francois, 2017), \emph{rio} (Version 0.5.10; C.-h. Chan, Chan, Leeper,
+\& Becker, 2018), \emph{stringr} (Version 1.3.1; Wickham, 2018b),
+\emph{survival} (Version 2.42.6; Terry M. Therneau \& Patricia M.
+Grambsch, 2000), \emph{tibble} (Version 1.4.2; Müller \& Wickham, 2018),
+\emph{tidyr} (Version 0.8.1; Wickham \& Henry, 2018), and
+\emph{tidyverse} (Version 1.2.1; Wickham, 2017) for all our analyses. We
+calculated means and standard deviations for each of the total scale
+scores, and we separated means by socioeconomic status. We also
+calculated Pearson's r correlation coefficients between depressive
+symptoms, quality of life, and sleep quality total scores. The authors
+interpreted our correlational results as small (.10-.29), medium
+(.30-.49), and large correlations (.50-1.00).
 
 \section{Results}\label{results}
 
@@ -328,7 +336,7 @@ Med & 7.72 & 9.86 & 7.45\\
 
 \begin{figure}
 \centering
-\includegraphics{APA_Document_files/figure-latex/Plot 1-1.pdf}
+\includegraphics{APA_Document_files/figure-latex/plot 1-1.pdf}
 \caption{}
 \end{figure}
 
@@ -357,7 +365,7 @@ need to mess with aspect ratios of figures{]}
 \begin{table}[tbp]
 \begin{center}
 \begin{threeparttable}
-\caption{\label{tab:correlations table}Correlations between Depression, Sleep Quality, and Quality of Life Scores.}
+\caption{\label{tab:table2}Correlations between Depression, Sleep Quality, and Quality of Life Scores.}
 \begin{tabular}{llll}
 \toprule
 row & \multicolumn{1}{c}{column} & \multicolumn{1}{c}{cor} & \multicolumn{1}{c}{p}\\
@@ -377,7 +385,7 @@ Depression & Quality of Life & -0.55 & 0.00\\
 
 \begin{figure}
 \centering
-\includegraphics{APA_Document_files/figure-latex/Figure 5-1.pdf}
+\includegraphics{APA_Document_files/figure-latex/plot 2-1.pdf}
 \caption{}
 \end{figure}
 
@@ -424,11 +432,6 @@ symptoms, sleep and life quality.
 \newpage
 
 \section{References}\label{references}
-
-\begin{verbatim}
-## Warning in readLines(file): incomplete final line found on 'r-
-## references.bib'
-\end{verbatim}
 
 \begingroup
 \setlength{\parindent}{-0.5in} \setlength{\leftskip}{0.5in}

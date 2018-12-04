@@ -2,13 +2,13 @@
 \ifnextchar[{\eatarg}{}
 
 \centering
-\includegraphics{APA_Document_files/figure-latex/Plot 1-1.pdf}
+\includegraphics{APA_Document_files/figure-latex/plot 1-1.pdf}
 \caption{}
 \end{figure*}
 \begin{figure*}[hbt]
 \ifnextchar[{\eatarg}{}
 
 \centering
-\includegraphics{APA_Document_files/figure-latex/Figure 5-1.pdf}
+\includegraphics{APA_Document_files/figure-latex/plot 2-1.pdf}
 \caption{}
 \end{figure*}
