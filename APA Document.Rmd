@@ -15,7 +15,7 @@ author:
 
 affiliation:
   - id            : "1"
-    institution   : "University of Oregon Department of Psychology"
+    institution   : "University of Oregon, Department of Psychology"
 
 authornote: |
 
@@ -199,7 +199,7 @@ plot_grid(title, pp1, pp2, pp3, ncol = 1, rel_heights = c(0.3, 1, 1, 1))
 ```
 
 ##Descriptive Statistics
-The mean depression total score for the sample is `r round(mean(data$mdd_total), 2)` . The mean sleep quality total score for the sample is `r round(mean(data$sq_total), 2)`. The mean quality of life total score for the sample is `r round(mean(data$ql_total), 2)`. Mean total scores separated specifically by socioeconomic status are listed in Table 1 and graphically displayed in Figure 1. 
+The mean depression total score for the sample is `r round(mean(data$mdd_total), 2)`. The mean sleep quality total score for the sample is `r round(mean(data$sq_total), 2)`. The mean quality of life total score for the sample is `r round(mean(data$ql_total), 2)`. Mean total scores separated specifically by socioeconomic status are listed in Table 1 and graphically displayed in Figure 1. 
 
 ##Correlation Results
 Depressive symptoms were significantly negatively correlated with both sleep quality, *r* = -.20, *p* < .01, and quality of life, *r* = -.55, *p* < .01. Sleep quality and quality of life were significantly positively correlated, *r* = .22, *p* < .01. (see Table 2)
