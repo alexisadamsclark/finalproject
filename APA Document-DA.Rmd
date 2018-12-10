@@ -1,0 +1,397 @@
+---
+title             : "Final Project: The Relationship between Sleep, Depression, Quality of Life, and Socioeconomic Status"
+shorttitle        : "Final Project"
+
+author: 
+  - name          : "Alexis Adams-Clark"
+    affiliation   : "1"
+    corresponding : yes
+    address       : "1585 E 13th Ave, Straub 339, Eugene, OR 97403"
+    email         : "aadamscl@uoregon.edu"
+  - name          : "Andrew Fridman"
+    affiliation   : "1"
+  - name          : "Xi Yang"
+    affiliation   : "1"
+
+affiliation:
+  - id            : "1"
+    institution   : "University of Oregon, Department of Psychology"
+
+authornote: |
+
+  We would like to acknowledge Daniel Anderson for introducing us to `papaja` and thank our classmates in Introduction to Data Science with R.
+
+abstract: |
+  Depression is a widespread and debilitating mental illness. However, sleep quality is a potent and modifiable protective factor that may reduce depressive symptoms and increase quality of life. In this study, we examined the associations among depressive symptoms, sleep quality, and quality of life in a high risk sample. We also looked for differences in depressive symptoms, sleep quality, and quality of life according to socioeconomic status. Using correlational analyses, we found depressive symptoms were negatively correlated with quality of life and sleep quality. Meanwhile, sleep quality was positively correlated with quality of life. However, there seemed to be no observable differences between depressive symptoms, sleep quality, and quality of life scores between socioeconomic groups. These results indicate that intricate and strong associations exist among depressive symptoms, sleep quality, and quality of life. Clinical implications of these findings are also discussed. 
+  
+  <!-- https://tinyurl.com/ybremelq -->
+  
+keywords          : "sleep, depression, quality of life, SES"
+
+bibliography      : ["r-references.bib"]
+
+floatsintext      : no
+figurelist        : no
+tablelist         : no
+footnotelist      : no
+linenumbers       : no
+mask              : no
+draft             : no
+header-includes:
+  - \raggedbottom
+  - \setlength{\parskip}{0pt}
+  - \usepackage{xcolor} # Just so I can make some things red
+
+documentclass     : "apa6"
+classoption       : "man, noextraspace"
+output            : papaja::apa6_pdf
+---
+
+```{r setup, include = FALSE}
+library("papaja")
+```
+
+```{r analysis-preferences}
+# Seed for random number generation
+set.seed(42)
+knitr::opts_chunk$set(cache.extra = knitr::rand_seed)
+```
+
+# Introduction
+
+Sleep quality, typically indexed by a combination of sleep efficiency and total sleep time (TST), is an important outcome in the context of long-term health. Sleep efficiency is defined as the percentage of time spent sleeping while laying in bed, whereas, total sleep time is the amount of time spent sleeping, accounting for factors such as sleep onset latency and awakenings. There are a multitude of studies that suggest that poor sleep is a prospective risk factor in premature mortality [@knutson2007metabolic]. More specifically, chronically disrupted and limited sleep has been linked to increased rates of obesity, diabetes, cardiovascular disease, cognitive impairment, and mental health disorders [@gangwisch2005inadequate]. Additional research suggests that the relationship between poor sleep quality and negative health outcomes outcomes is exacerbated further due to the effects of poverty (i.e., low SES) [@mezick2008influence]. Perhaps, these populations could be differentially affected by poor sleep quality, or be more vulnerable to developing these maladaptive patterns.
+
+Recent epidemiological research suggests that sleep has continued to decrease
+over the past 30 years, which is consistent with the significant increase in sleep-related complaints in the workforce [@ferrie2011sleep]. In this review by Ferrie and colleagues, the reduction in sleep quality was also thought to be associated with the staggering increase in work-related and vehicular accidents. While research has provided evidence between sleep quality and health-outcomes, there are few studies examining other global measures such as quality of life.
+
+<!-- Nice transition -->
+Quality of life is a helpful and comprehensive measure of an individual’s subjective experience. For example, this variable may encompass interpersonal and familial relationships, occupational satisfaction, financial security, and intellectual development. While there may be tangible health-related outcomes (e.g., number of hospital visits), the subjective interpretation of distressing impairments due to poor sleep quality may also provide valuable insights. This overall outcome can adequately capture sub-threshold depressive symptoms, which may still benefit from various interventions (e.g., cognitive-behavioral therapy for insomnia).
+
+While this global measure may capture the negative impact of poor sleep quality through broad strokes, depression is a more clinically-specific outcome to consider. Depressive symptoms, such as low mood and irritability, have been consistently linked to sleep-related psychopathology [@spoormaker2005depression]. This pattern of poor sleep quality may increase obstacles associated with obtaining reliable treatment by exacerbating current depressive symptoms. Therefore, sleep quality seems to be at the root of these domain-spanning impairments and an essential target for intervention.
+
+In this study, we evaluate evidence for the association between sleep quality, depression, and quality of life in a diverse sample of adults. These relationships were investigated in the context of low, medium, and high SES as a moderator, as those in lower socioeconomic groups are at higher risk for
+depression and sleep problems. Given the importance of sleep quality and mental
+health on long-term health outcomes, we hope to enrich the current literature with a better understanding of these complex factors. Findings from this study have implications for psychopathology models and provide a foundation from which causal and longitudinal intervention-focused research can be constructed.
+
+# Methods\footnote{This is a fictional Methods section, as we simulated our data. However, this is a realistic way that we could go about collecting this data in the future}
+
+## Participants
+Participants were recruited through Amazon Mechanical Turk (MTurk). MTurk is a survey tool offered through Amazon.com, where people around the world can complete surveys for monetary compensation. MTurk is commonly used in social science research studies, and it has been found to be representative \textcolor{red}{(CITE)}.
+
+<!-- I think there's a paper by Thomas Leeper that supports the use of MTurk. I have no problem with it and would trust the results but old stogy people might not, so best to provide a citation to back up the claim. -->
+
+In total, 500 participants were included in this study, all of whom had complete data. Out of 500 participants, 194 identified as "low" SES, 244 identified as "middle" SES, and 62 identified as "high" SES. Out of 500 participants, 64 had not graduated high school, 157 completed high school, 96 had a postsecondary certificate, and 183 had some postsecondary education. Additionally, 344 identified as European-American, 51 identified as African American, 51 identified as Hispanic, 27 identified as Asian-American, 15 identified as American Indian/Alaskan Native, 11 identified as Pacific Islander, and 1 identified as "other."
+
+<!-- Because you're saying you used MTurk, you might want to specify the geographic regions that the participants were from -->
+
+## Materials
+
+### Depressive Symptoms Scale
+A scale to measure depressive symptoms was created by the researchers for the purposes of this study. Participants were instructed to rate each item on Likert scale, where 1 corresponds to “strongly disagree,” and 5 corresponds to “strongly agree." The scale consisted of three items, including: “Over the last 2 weeks, I have felt little interest or pleasure in doing things;” “Over the last 2 weeks, I have felt down, depressed, or hopeless;” and “Over the last 2 weeks, I have felt tired or had little energy.” Scale items were summed to create a depression score, where higher scores represent higher depressive symptoms.
+
+### Quality of Life Scale
+A scale to measure participants’ quality of life was created by the researchers. Participants were instructed to rate each item on Likert scale, where 1 corresponds to “strongly disagree,” and 5 corresponds to “strongly agree.” The scale consisted of four items, including: “My life is ideal;” “I am satisfied with my life;” “So far I have been able get the important things I want from life;” and “I have accomplished many of the things in my life.” Scale items were summed to create a total quality of life score, where higher scores represent better quality of life.
+
+### Sleep Quality Scale
+A scale to measure participants’ sleep quality was created by the researchers. Participants were instructed to rate each item on Likert scale, where 1 corresponds to “strongly disagree,” and 5 corresponds to “strongly agree.” The scale consisted of three items, including: “I am satisfied with the time I spend sleeping;” “I am satisfied with my quality of sleep”; and “When I wake up, I feel refreshed.” Scale items were summed to create a total sleep quality score, where higher scores represent better sleep quality. 
+
+### Demographics Questionnaire
+Participants were also asked to complete a demographics questionnaire, which asked about their socioeconomic status, race/ethnicity, and educational background. 
+
+<!-- You might also want to state the income thresholds for what you defined as low, medium, and high SES -->
+
+## Procedure
+An online version of this study was created through Qualtrics survey software, and the survey link was distributed to participants on the via Amazon Mechanical Turk. The study was advertised as "a study of sleep and well-being." After clicking the survey link, participants were informed of study procedures and content through an informed consent process. After completing the study, participants received academic credit as compensation and were presented with debriefing materials. The University of Oregon's Office of Research Compliance (Institutional Review Board) approved this study. 
+
+<!-- If you were to use Qualtrics for an actual study, there is an R package that will allow you pull your data straight from there using the Qualtrics API. See here https://github.com/ropensci/qualtRics -->
+
+## Data analysis
+We used `r cite_r("r-references.bib")` for all our analyses. We calculated means and standard deviations for each of the total scale scores, and we separated means by socioeconomic status. We also calculated Pearson's $r$ correlation coefficients between depressive symptoms, quality of life, and sleep quality total scores. We interpreted our correlational results in accordance with Cohen's recommendations \textcolor{red}{(CITE)}, with small correlations ranging from .10 to .29, medium ranging from .30-.49, and large correlations ranging from .50-1.00.
+
+<!-- The cite here should be Cohen, 1988, I believe -->
+
+# Results
+
+<!-- If you have `include = FALSE` you will go no output whatsoever. The code will evaluate, but you won't get any results. I do this to set up global options and load packages, but I wouldn't use it past that. Also, if you have `include = FALSE`, then `message = FALSE` and `error = FALSE` are rather redundant at that point. -->
+
+```{r results, include = FALSE}
+library(rio)
+library(tidyverse)
+library(here)
+library(knitr)
+library(janitor)
+library(forcats)
+library(Hmisc)
+library(cowplot)
+theme_set(theme_minimal())
+
+#Import data
+list(here()) # were you looking for `list.files` here? As in
+# list.files(here())
+data <- import(here("Data", "Final_project_simulated_data.csv"))
+
+# I'd probably not call this object data, because there's a base function in R called data that you use to load data from packages.
+
+#Clean names, make lowercase
+data <- data %>% 
+  clean_names() %>% 
+  mutate(ses = as.factor(ses), 
+         ed = as.factor(ed),
+         en = as.factor(en),
+         sq1 = as.numeric(sq1),
+         sq2 = as.numeric(sq2),
+         sq3 = as.numeric(sq3), 
+         sq4 = as.numeric(sq4),
+         mdd1 = as.numeric(mdd1),
+         mdd2 = as.numeric(mdd2),
+         mdd3 = as.numeric(mdd3),
+         ql1 = as.numeric(ql1),
+         ql2 = as.numeric(ql2),
+         ql3 = as.numeric(ql3))
+
+# Rather than changing all the types like this, you can specify it on import using the argument `col_type` argument. I'm not sure if that works with {rio}, actually, but I know it does if you used `readr::read_csv`. From the documentation, you could do something like 
+#
+# df3 <- read_csv(
+#   readr_example("challenge.csv"), 
+#   col_types = cols(
+#     x = col_double(),
+#     y = col_date(format = "")
+#   )
+# )
+
+#Create total scores
+#sq = sleep quality, mdd = major depression, ql = quality of life
+data <- data %>% 
+  mutate(sq_total = sq1 + sq2 + sq3 + sq4, 
+         mdd_total = mdd1 + mdd2 + mdd3,
+         ql_total = ql1 + ql2 + ql3)
+
+#Grouping by ses and creating a summary of Depression (mdd), Sleep Quality (sq), and Quality of Life (ql) total scores
+scorebyses <- data %>% 
+  group_by(ses) %>% 
+  dplyr::summarize(mean_mdd = mean(mdd_total),
+            mean_sq = mean(sq_total),
+            mean_ql = mean(ql_total))
+#Change levels of ses
+levels(scorebyses$ses)
+scorebyses <- scorebyses %>% 
+  mutate(ses = fct_recode(ses, "High" = "HighSES", 
+                               "Med" = "MiddleSES",
+                               "Low" = "LowSES"))
+
+scorebyses$ses <- factor(scorebyses$ses, levels = c("Low", "Med", "High"))
+
+scorebyses <- scorebyses %>% 
+  rename(`Mean Depression Score` = mean_mdd,
+         `Mean Sleep Quality Score` = mean_sq,
+         `Mean Quality of Life Score` = mean_ql,
+          SES = ses)
+
+scorebyses$SES <- factor(scorebyses$SES, levels = c("Low", "Med", "High"))
+levels(scorebyses$SES)
+
+# Why the double SES?
+```
+
+
+```{r Table 1, results = "asis"}
+apa_table(scorebyses, 
+          caption = "Mean Depression, Sleep Quality, and Quality of Life Scores by SES Group.",  
+          note = "This table was created with `apa_table()`",
+          align = "c")
+```
+
+<!-- You shouldn't need to put `echo = FALSE` as a chunk option because that's the default in {papaja}. -->
+
+<!-- This isn't where the plot is actually rendered, so removed figure options -->
+```{r plot-1-set}
+# theme had already been set, so I removed that part.
+
+# Try to keep lines to 80 characters
+pp1 <- ggplot(scorebyses, aes(x = SES, y = `Mean Depression Score`, fill = SES)) + 
+  geom_col(alpha = 0.7, width = 0.5) + 
+  labs(y = "Depression", 
+       x = "Socioeconomic Status") + 
+       guides(fill=FALSE)
+
+pp2 <- ggplot(scorebyses, aes(x = SES, y = `Mean Sleep Quality Score`, fill = SES)) + 
+  geom_col(alpha = 0.7, width = 0.5) + 
+  labs(y = "Sleep Quality", 
+       x = "Socioeconomic Status") + 
+       guides(fill=FALSE)
+
+pp3 <- ggplot(scorebyses, aes(x = SES, y = `Mean Quality of Life Score`, fill = SES)) + 
+  geom_col(alpha = 0.7, width = 0.5) + 
+  labs(y = "Quality of Life", 
+       x = "Socioeconomic Status") + 
+       guides(fill=FALSE)
+
+```
+
+```{r plot-1-render, results = "asis", fig.width = 5, fig.height = 8, fig.cap = "Mean depression, sleep quality, and quality of life scores by socioeconomic status"}
+
+# Set the figure caption through `fig.cap` so remove it from the actual figure
+plot_grid(pp1, pp2, pp3, ncol = 1)
+
+# Rather than using cowplot, and pasting three plots together, I would have liked to have seen you just use gather with something like
+# scorebyses %>%
+#   gather(outcome, Mean, -SES) %>%
+#   mutate(outcome = gsub("Mean | Score", "", outcome)) %>%
+#   ggplot(aes(SES, Mean)) +
+#     geom_col(aes(fill = SES, alpha = 0.7, width = 0.5)) +
+#     facet_wrap(~outcome, ncol = 1) +
+#     guides(fill = FALSE)
+
+# This is not only more succinct, but arguably a better plot because the y-axis is constant and therefore more directly comparable between the facets.
+
+```
+
+
+## Descriptive Statistics
+The mean depression total score for the sample was `r round(mean(data$mdd_total), 2)`, while the mean sleep quality score was `r round(mean(data$sq_total), 2)`, and the mean quality of life score was `r round(mean(data$ql_total), 2)`. Means by socioeconomic status are listed in Table 1 and displayed graphically in Figure 1. 
+
+## Correlation Results
+Depressive symptoms were significantly negatively correlated with both sleep quality, $r$ = -.20, $p$ < .01, and quality of life, $r$ = -.55, $p$ < .01. Sleep quality and quality of life were significantly positively correlated, $r$ = .22, $p$ < .01. (see Table 2)
+
+## Exploratory Analyses in Low SES Individuals
+In order to look at these relationships specifically in low SES individuals, we plotted the correlations between depressive symptoms, sleep quality, and quality of life in only low SES individuals (see Figure 2). To look sepcifically at the differences in scores on each depressive symptom, we subtracted the scores of low SES individuals from high SES individuals and plotted the differences (see Figure 3).
+
+```{r correlations, include = FALSE}
+#Correlations between the three outome variables
+data_corr <- data %>% 
+  select(ends_with("total"))
+data_corr <- data_corr%>% 
+  rename(`Depression` = mdd_total,
+         `Sleep Quality` = sq_total,
+         `Quality of Life` = ql_total)
+
+corr <- cor(data_corr)
+
+library(Hmisc)
+
+# I'm guessing, since this is using base functions and camelCase, that you found this online? There's nothing wrong with that, but you might want to give subtle credit by linking to where you got the code from in a code comment.
+
+# EDIT: I found it. From Jasmine Dumas! She's great, and actually gave a talk for PDX R Users group a while back.  I would do it something like the following
+
+# The following function was written by Jasmine Dumas, and can be found here: https://github.com/jasdumas/data-exploreR/blob/master/www/flattenCorrMatrix.R
+
+flattenCorrMatrix <- function(cormat, pmat) { 
+  ut <- upper.tri(cormat)
+  data.frame(
+    row = rownames(cormat)[row(cormat)[ut]],
+    column = rownames(cormat)[col(cormat)[ut]],
+    cor  =(cormat)[ut],
+    p = pmat[ut]
+    )
+}
+
+r <- rcorr(as.matrix(data_corr))
+r2 <- flattenCorrMatrix(r$r, r$P)
+
+data_p <- data %>%  
+                select(id, ses, en, sq_total, mdd_total, ql_total) %>% 
+                filter(ses == "LowSES")              
+```
+
+
+```{r table2, results = "asis"}
+apa_table(r2, caption = "Correlations between Depression, Sleep Quality, and Quality of Life Scores.",  
+          note = "This table was created with apa_table()")
+```
+
+
+```{r plot-2-set}
+
+#Scatterplot of sleep quality vs. depression
+sp1 <- ggplot(data_p, aes(x = sq_total, y = mdd_total)) + 
+              geom_point(position = position_jitter(w = 0.1, h = 0), alpha = 0.7) + 
+              geom_smooth(method = "lm") +
+              labs(x = "Sleep Quality", 
+                   y = "Depression")
+
+#Scatterplot of quality of life vs. depression
+sp2 <- ggplot(data_p, aes(x = sq_total, y = ql_total)) + 
+              geom_point(position = position_jitter(w = 0.1, h = 0), alpha = 0.7) + 
+              geom_smooth(method = "lm", color = "purple4") +
+              labs(x = "Sleep Quality", 
+                   y = "Quality of Life")
+
+#Scatterplot of quality of life vs. depression
+sp3 <- ggplot(data_p, aes(x = ql_total, y = mdd_total)) + 
+              geom_point(position = position_jitter(w = 0.1, h = 0), alpha = 0.7) + 
+              geom_smooth(method = "lm", color = "darkgreen") +
+              labs(x = "Quality of Life", 
+                   y = "Depression")
+```
+
+
+```{r plot-2-render, fig.width = 5, fig.height = 8, results = "asis", fig.cap = "Relationships between Depression, Sleep Quality, and Quality of Life Scores in Low SES Individuals"}
+
+plot_grid(sp1, sp2, sp3, ncol = 1)
+
+# I again would have liked to see you use gather here, for the same reasons stated above.
+```
+
+
+```{r gather separate select filter spread, echo = FALSE}
+#Gather, separate, and spread demo
+data_t <- data %>%  
+                select(id, ses, 5:14) %>% 
+                gather(items, Value, -1:-2) %>% 
+                separate(items, c("Measure", "Item"), sep = "(?=[:digit:])", convert = TRUE) %>% 
+                group_by(ses, Measure, Item) %>% 
+                summarise(Value_mean = mean(Value)) %>% 
+                spread(key = ses, value = Value_mean) %>% 
+                mutate(DiffSES = LowSES - HighSES)
+
+data_ts <- data_t %>% 
+                select(Measure, Item, DiffSES) %>% 
+                spread(key = Measure, value = Item) %>% 
+                arrange(mdd, ql, sq)
+
+#Subset data for plot
+data_tp <- data_t %>%  
+                filter(Measure == "mdd")
+
+data_tp$Item <- as.factor(data_tp$Item)
+```
+
+
+```{r plot-3, fig.cap = "Low-to-High SES Difference in MDD scores"}
+#Scatterplot of tidy data
+ggplot(data_tp, aes(x = Item, y = DiffSES)) + 
+  geom_col(alpha = 0.7, width = 0.7, aes(fill = Item)) + 
+  labs(x = "Item", 
+       y = "Difference") +
+  guides(fill = FALSE)
+```
+
+# Discussion
+Our results suggest that more frequent depressive symptoms were correlated with lower quality of life and lower sleep quality. Furthermore, sleep quality was positively associated with quality of life. The results were consistent with past literature and our hypotheses. We also explored group differences in depressive symptoms, sleep quality, and quality of life, specifically for individuals with low socioeconomic status. Descriptive analyses did not reveal any apparent differences between these three outcomes according to socioeconomic status, although we did not conduct any inferential statistical tests on these group differences.
+
+Based on the symptoms from major depressive disorder diagnosis, a patient suffering from depression is likely to experience either hypersomnia or insomnia. Insomnia is most related to low sleep quality. Meanwhile, hypersomnia does not guarantee high sleep quality as much too long duration of sleep may cause dizziness and lethargy in the patients. In reverse, frequent sleep disturbances and the discomfort and stress that come with low sleep quality may negatively impact a patient's everyday mood and reduce the general energy level to engage in more mood-boosting activities. These bidirectional influences may explain the negative correlation between depression and sleep quality that we detected in our sample. 
+
+As sleep is an instrumental component in everyday life, lower sleep quality will inevitably decrease life quality. Higher life quality may consist of more comfortable sleeping environment and less sleep-hindering stress. These potential connections help elucidate the positive association between sleep quality and life quality. 
+
+In the exploratory analysis of the participants' SES, we detected distinct patterns of response to the depression measure. Specifically, participants from low SES consistently rated much higher on the "low interest or pleasure" (item 1) and "low energy" (item 3) than participants from high SES. In contrast, participants from high SES strongly endorsed the "low hope" (item 3). The distinct patterns of responses to the depression measure may imply differentiated depression profile or risk factors in people of low and high SES.
+
+<!-- Why is this sample "high risk"? -->
+Limitations of our study lie in our correlational study design such that we were unable to examine causal relationship among the variables. We also relied on self-report measures that may be susceptible to reporter bias. Possible bias in this high risk sample include underreporting of depression symptoms due to low insight or emotional numbness, as well as overreporting due to the Hawthorne effect or other motivations. In studies to follow, we will also adopt structured clinical interviews and objective measures of the key variables. We will incorporate sleep interventions (e.g., insomnia cognitive behavior therapy) to manipulate the sleep quality level to examine causal relationship between depression symptoms and sleep quality. An active and a waitlist control group will be recruited to rule out more confounds. More sophisticated statistical analyses such as multilevel modeling may be adopted.
+
+<!-- When describing your future work (above) I would state it as these are things we're considering doing, versus a prescriptive list of things that will be done -->
+
+Clinical implications of the results may inform clinicians and the general public to pay more attention to sleep quality with an aim of keeping depression at bay or reducing depressive symptoms. In general, our study with a high risk sample demonstrated the intricate associations among depressive symptoms, sleep quality, and quality of life.
+
+\newpage
+
+# References
+```{r create_r-references}
+r_refs(file = "r-references.bib")
+```
+
+\begingroup
+\setlength{\parindent}{-0.5in}
+\setlength{\leftskip}{0.5in}
+
+<div id = "refs"></div>
+\endgroup
